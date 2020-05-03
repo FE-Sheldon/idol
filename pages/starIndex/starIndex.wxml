@@ -1,0 +1,263 @@
+<!--pages/starIndex/starIndex.wxml-->
+<view class="starIndex-page {{banScroll === true ? 'scroll-lock' : ''}} ">
+  <view style="display:none">
+    <image wx:for="{{images}}" wx:key="{{item.id}}" id="{{item.id}}" src="{{item.detail.pic_artwork}}" bindload="onImageLoad"></image>
+  </view>
+  <view class='starIndex-page-header' style="padding-top:{{statusBarHeight}}rpx" id="HeaderNav">
+    <HeaderNav titleNameProp="{{allList.banner.name}}" arrowLeftIsFixedProp="{{true}}" isIphoneXProp="{{isIphoneX}}" homeIconShowProp="{{is_share}}"></HeaderNav>
+  </view>
+  <view class='header' bindtap='hidePlayList'>
+    <!-- <view class="titleName">爱豆甜品</view> -->
+    <!-- <view class='arrowLeft-img-box' >
+      <image src="https://idols.heywoodsminiprogram.com/images/arrowLeft.png" mode="widthFix"></image>
+    </view> -->
+    <!-- 点击goback的空标签区域 -->
+    <!-- <view class='return-page-view' bindtap='returnPage'></view> -->
+    <!-- 点击goback的空标签区域end -->
+    <view class='bg'>
+      <image src='{{allList.banner.hot_pic.pic_top}}' mode='aspectFill'></image>
+    </view>
+    <view class='masking'>
+
+    </view>
+    <!-- 音符的位置 -->
+    <!-- <view class='music-icon-img-box' wx:if="{{allList.banner.music_list.length > 0}}">
+      <image src="../../assets/images/musicIcon.png"></image>
+    </view> -->
+    <!-- 音符的位置end -->
+
+
+    <!-- <view class='photo-left-icon-img-box'>
+      <image src='../../assets/images/photoLeftIcon.png' mode='widthFix'></image>
+    </view> -->
+    <!-- 顶部遮罩层内容 -->
+    <view class='top-shade-img-box'>
+      <image src="../../assets/images/topShade.png" mode='widthFix'></image>
+    </view>
+    <!-- 顶部遮罩层内容end -->
+    <view class='photo-img-box' catchtap='showPlayList'>
+      <image src='{{allList.banner.hot_pic.pic_top}}' catchtap='showPlayList'></image>
+      <!-- 歌曲名称滚动的内容 -->
+      <view class='music-name' wx:if="{{allList.banner.music_list.length > 0}}" catchtap="showPlayList">
+        <image src='../../assets/images/musicIcon2.png' style='width:32rpx;height:32rpx;' class="{{isPaused === true? '' : 'disc-am'}}"></image>
+        <view class='seamlessscrolling' style='height:{{bh}}rpx;width:86%;'>
+          <view style='height:{{bh}}rpx;width:100%;left:{{bl}}rpx;'>
+            <view wx:for="{{musicNameArr}}" wx:key="unique" style='height:{{bh}}rpx;line-height:{{bh}}rpx;width:{{bw}}px;position:absolute;top:0rpx;left:{{index*bw}}rpx;' class='text'>{{item}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 歌曲名称滚动的内容 -->
+    </view>
+
+    <view class='star-img-box'>
+      <image src='../../assets/images/star.png' mode='widthFix'></image>
+    </view>
+    <view class='popularity-num'>
+      <text>{{allList.banner.popularity_num}}</text>
+      <text class='add-popular-number' wx:if="{{addPopularNumberShow}}">+{{addPopularNumber}}</text>
+    </view>
+    <!-- <view class='ranking'>本周人气排名{{allList.banner.rank}}</view> -->
+
+    <!-- <view class=" name ">{{allList.banner.name}}</view> -->
+    <view class='nhuman-qi-number'>本周人气</view>
+    <view class='hr'></view>
+    <!-- <view class='nhuman-qi-number'>{{allList.banner.popularity_num}}人气</view> -->
+    <view class='ranking'>
+      <text>排名</text>
+      <text style='margin-left:10rpx'>{{allList.banner.rank}}</text>
+    </view>
+    <!-- <form bindsubmit="" report-submit="true">
+      <button form-type="submit" hover-class="none" open-type='share' class='pull-nhuman-qi-button'>
+        <view class='pull-nhuman-qi'>
+          <view class='text'>分享到群加人气</view>
+        </view>
+      </button>
+    </form> -->
+    <view class='tab-nav'>
+      <view class='tab-nav-container'>
+        <!-- 最热 -->
+        <view class="hot item {{currentTab==0 ? 'active' : ''}}" bindtap='tabNavClick' data-current="0">
+          <form bindsubmit="formIdCollect" report-submit="true">
+            <button form-type="submit" hover-class="none">
+              <!-- <view class='box'>
+                <image src="{{currentTab == 0? '../../assets/images/hotIconActive.png' : '../../assets/images/hotIcon.png'}}" style='width:32rpx;height:40rpx;' class='hotIcon'></image>
+                <view class='text'>精选</view>
+              </view> -->
+              <view class='text'>
+                <text>精选</text>
+              </view>
+            </button>
+          </form>
+        </view>
+        <!--最热end -->
+
+        <!-- 最新 -->
+        <view class="new item {{currentTab==1 ? 'active' : ''}}" bindtap='tabNavClick' data-current="1">
+          <form bindsubmit="formIdCollect" report-submit="true">
+            <button form-type="submit" hover-class="none">
+              <!-- <view class='box'>
+                <image src="{{currentTab == 1? '../../assets/images/newIconActive.png' : '../../assets/images/newIcon.png'}}" style='width:48rpx;height:36rpx;' class='newIcon'></image>
+                <view class='text'>广场</view>
+              </view> -->
+              <view class='text'>
+                <text>广场</text>
+              </view>
+
+            </button>
+          </form>
+        </view>
+        <!-- 最新end -->
+      </view>
+    </view>
+  </view>
+  <!-- <view class='wjad-img-box'>
+    <image src='../../assets/images/wjadBg.png'  mode="widthFix"></image>
+    <view class='avatar'>
+      <view class='avatar-box' wx:for="{{data}}" bindtap='goPhotoDetailPage'>
+        <image src='../../assets/images/avatarImg.png' mode="widthFix"></image>
+      </view>
+      <view class='more-icon'>
+        <image src='../../assets/images/moreIcon.png'  mode="widthFix"></image>
+      </view>
+    </view>
+  </view> -->
+  <scroll-view class='photo-container'>
+    <!-- <form bindsubmit="formIdCollect" report-submit="true">
+      <button form-type="submit" hover-class="none"> -->
+    <view class='left-view'>
+      <view class='box' wx:for="{{leftList}}" bindtap='goPhotoDetailPage' wx:key="{{item.id}}" data-picid="{{item.id}}" data-starid='{{item.detail.star_id}}' data-currentIndex='{{index}}' data-flag="{{item.flag}}">
+        <view class='item'>
+          <view class='img-box' style='height:{{item.detail.height * 360 / item.detail.width}}rpx;'>
+            <image src='{{item.detail.pic_artwork}}' mode='widthFix' lazy-load="true"></image>
+          </view>
+          <view class='user-info' wx:if="{{item.detail.pic_artwork != ''}}">
+            <view class='left'>
+              <view class='avaimg' style="background:url('{{item.avatar}}') no-repeat;background-size:100%;border-radius:50%;">
+                <!-- <image src='{{item.detail.avatar}}' mode='widthFix' style='width:40rpx;margin-right:9rpx;border-radius:50%;'></image> -->
+              </view>
+              <view class='nick-name'>{{item.nickname}}</view>
+            </view>
+            <view class='right'>
+              <!-- <view class='likeIcon'> -->
+              <image src='../../assets/images/likeIcon.png' mode='widthFix' style='width:22rpx;margin-right:9rpx;' wx:if="{{item.is_thumbs == 0}}"></image>
+              <image src='../../assets/images/likeIconActive.png' mode='widthFix' style='width:22rpx;margin-right:9rpx;' wx:if="{{item.is_thumbs == 1}}"></image>
+              <!-- </view> -->
+              <view class='like-number'>{{item.thumbs}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- </button>
+      <button> -->
+    <view class='right-view'>
+      <view class='box' wx:for="{{rightList}}" bindtap='goPhotoDetailPage' wx:key="{{item.id}}" data-picid="{{item.id}}" data-starid='{{item.detail.star_id}}' data-currentIndex='{{index}}'>
+        <view class='item'>
+          <view class='img-box' style='height:{{item.detail.height * 360 / item.detail.width}}rpx;'>
+            <image src='{{item.detail.pic_artwork}}' mode='widthFix' lazy-load="true"></image>
+          </view>
+          <view class='user-info' wx:if="{{item.pic_artwork != ''}}">
+            <view class='left'>
+              <view class='avaimg' style="background:url('{{item.avatar}}') no-repeat;background-size:100%;border-radius:50%;">
+                <!-- <image src='{{item.detail.avatar}}' mode='widthFix' style='width:40rpx;margin-right:9rpx;border-radius:50%;'></image> -->
+              </view>
+              <view class='nick-name'>{{item.nickname}}</view>
+            </view>
+            <view class='right'>
+              <!-- <view class='likeIcon'> -->
+              <image src='../../assets/images/likeIcon.png' mode='widthFix' style='width:22rpx;margin-right:9rpx;' wx:if="{{item.is_thumbs == 0}}"></image>
+              <image src='../../assets/images/likeIconActive.png' mode='widthFix' style='width:22rpx;margin-right:9rpx;' wx:if="{{item.is_thumbs == 1}}"></image>
+              <!-- </view> -->
+              <view class='like-number'>{{item.thumbs}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- </button>
+    </form> -->
+  </scroll-view>
+  <view class='footer-text' wx:if="{{noMore}}">
+    <text>到底了，点击右侧上传更多美图吧~</text>
+  </view>
+  <!-- 上传图片入口按钮 -->
+  <form bindsubmit="" report-submit="true" wx:if="{{uploadBtnShow}}">
+    <button form-type="submit" hover-class="none" open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+      <view class='uploadBtn'>
+        <image src='../../assets/images/tianjia_03.png' mode='widthFix'></image>
+      </view>
+      <view class='upload-swiper'>
+        <swiper vertical="true" autoplay="{{true}}" interval="2000" duration="500" circular="{{true}}">
+          <block>
+            <swiper-item>
+              <image src='../../assets/images/shangchuan.png' class="slide-image" />
+            </swiper-item>
+            <swiper-item>
+              <image src='../../assets/images/shangchuan2.png' class="slide-image" />
+            </swiper-item>
+
+          </block>
+        </swiper>
+      </view>
+    </button>
+  </form>
+
+  <!-- 上传图片入口按钮end -->
+  <!-- 提示窗 -->
+
+  <view class='guide-collect guide-collect-animationList' wx:if="{{cueShow}}">
+    <image src="../../assets/images/addCue.png"></image>
+  </view>
+
+  <!-- 提示窗end -->
+  <!-- 播放列表 -->
+  <!-- 播放列表 -->
+</view>
+
+<view class="music-play-list {{musicPlayAm}}">
+  <view class='head'>
+    <view class='title'>爱豆甜品</view>
+    <view class='close' bindtap='hidePlayList'>
+      <image src='../../assets/images/closeBtn.png'></image>
+    </view>
+  </view>
+  <view class='no-muisc-list' wx:if="{{musicList.length == 0}}">
+    <view class='img-box'>
+      <image src='../../assets/images/musicIcon5.png'></image>
+    </view>
+
+    <view class='text-1'>
+      <text>爱豆还没有添加音乐</text>
+    </view>
+
+    <view class='text-2'>
+      <button open-type='contact' hover-class="none" class='left' bindcontact="musicContact">
+        <text>点击联系客服</text>
+      </button>
+      <text class='right'>添加吧~</text>
+    </view>
+  </view>
+  <scroll-view scroll-y class='main' scroll-with-animation scroll-into-view="{{toView}}" wx:if="{{musicList.length > 0}}">
+    <view class='contain'>
+      <view class="box {{musicIndex == index ? 'box-active' : ''}}" wx:for="{{musicList}}" bindtap='handlePlay' data-index='{{index}}' data-musicurl='{{item.url}}' data-starname="{{item.star_name}}" data-id='{{item.id}}' id="a{{index}}" wx:key="{{item.id}}">
+        <view class='music-name'>{{item.music_name}}</view>
+        <view class='handlebtn' wx:if="{{musicIndex == index}}">
+          <image src='../../assets/images/playBtn.png' class='play' wx:if="{{isPaused}}"></image>
+          <image src='../../assets/images/pauseBtn.png' wx:if="false" class='pause' wx:if="{{!isPaused}}"></image>
+        </view>
+      </view>
+
+      <view class="{{musicList.length > 5? 'music-list-footer2' : 'music-list-footer'}}" wx:if="musicList.length < 5 || musicFooterShow ===true">
+        <text class='text-1'>想听其他歌？</text>
+        <button open-type='contact' hover-class="none" class='text-2' bindcontact="musicContact">
+          <text>点击联系客服</text>
+        </button>
+        <text class='text-3'>添加吧~</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- loading -->
+<Loading wx:if="{{showLoading}}"></Loading>
+<!-- loading end -->

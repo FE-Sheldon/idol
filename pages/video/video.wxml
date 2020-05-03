@@ -1,0 +1,34 @@
+<!--pages/video/video.wxml-->
+<view class='video-page' style="{{isIphoneX == true ? 'background:url(https://idols.heywoodsminiprogram.com/images/videoBgIphoneX.png) no-repeat':''}}">
+  <view class='video-page-header' style="padding-top:{{statusBarHeight}}rpx" id="HeaderNav">
+    <HeaderNav titleNameProp="爱豆甜品" arrowLeftShowProp="{{arrowLeftShowProp}}"></HeaderNav>
+  </view>
+
+  <view class='video-view'>
+    <view class='video-title'>{{dataPart.title}}</view>
+    <video src="{{dataPart.src}}" class='video' autoplay="true" loop="true" show-center-play-btn="{{false}}" ></video>
+  </view>
+
+  <view class='vocal-cords'>
+    <image src="/assets/images/vocalCordsIcon.png" mode='widthFix'></image>
+  </view>
+  <view class='haneld-btn'>
+    <form bindsubmit="goStarIndexPage" report-submit="true" wx:if="{{arrowLeftShowProp}}">
+      <button form-type="submit" hover-class="none">
+        <view class='more-photo item' >
+          <image src='/assets/images/morePhoto.png' mode='widthFix'></image>
+        </view>
+      </button>
+    </form>
+    <!-- <form bindsubmit="formIdCollect" report-submit="true">
+      <button form-type="submit" hover-class="none" open-type='share'>
+        <view class='share item'>
+          <image src='/assets/images/shareBtn.png' mode='widthFix'></image>
+        </view>
+      </button>
+    </form> -->
+  </view>
+  <view class='ad-view'>
+    <ad class="ad" unit-id="{{dataPart.unitId}}"></ad>
+  </view>
+</view>

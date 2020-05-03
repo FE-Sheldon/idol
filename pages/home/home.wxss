@@ -1,0 +1,366 @@
+/* pages/home/home.wxss */
+
+/* 头部样式 */
+
+.home-page {
+  overflow-x: hidden;
+}
+
+.home-page .header {
+  position: relative;
+  background: url('https://idols.heywoodsminiprogram.com/images/headerBg.jpg') no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 620rpx;
+}
+
+.home-page .headerFixed {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #3b3c42;
+  width: 100%;
+  height: 127rpx;
+}
+
+.home-page .header .search-img-box {
+  width: 543rpx;
+  height: 79rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.home-page .header .search-img-box image {
+  width: 100%;
+  height: 100%;
+}
+
+.home-page .headerFixed .search-img-mini-box {
+  z-index: 999;
+  width: 159rpx;
+  height: 55rpx;
+  position: absolute;
+  left: 26rpx;
+  top: 55rpx;
+}
+
+.home-page .header .find-cue-name {
+  width: 405rpx;
+  height: 45rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-page .header .find-cue-name .text {
+  width: 119rpx;
+  height: 45rpx;
+  border: 1px solid #fff;
+  font-size: 24rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.home-page .headerFixed .navigationBarTitleText {
+  font-size: 34rpx;
+  font-family: PingFangSC-Medium;
+  z-index: 999;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  transform: translate(-50%, -50%);
+}
+
+/* 头部样式end */
+
+/* .home-page .headerFixedMarginTop {
+  margin-top: 127rpx;
+} */
+
+.home-page .nhuman-qi-weekly-list {
+  /* height: 100vh; */
+}
+
+.home-page .nhuman-qi-weekly-list-title .time {
+  min-width: 78rpx;
+  height: 74rpx;
+  background: rgba(49, 49, 49, 1);
+  position: absolute;
+  left: 57rpx;
+  top: 53rpx;
+}
+
+.home-page .nhuman-qi-weekly-list-title .time .time-up {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .nhuman-qi-weekly-list-title .time .time-up text {
+  font-size: 18rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(49, 49, 49, 1);
+}
+
+.home-page .nhuman-qi-weekly-list-title .time .time-down {
+  height: 49rpx;
+  line-height: 49rpx;
+  text-align: center;
+}
+
+.home-page .nhuman-qi-weekly-list-title .time .time-down text {
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+}
+
+.home-page .nhuman-qi-weekly-list-title {
+  width: 100%;
+  height: 203rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home-page .nhuman-qi-weekly-list-title .list-img-box {
+  width: 90%;
+}
+
+.home-page .nhuman-qi-weekly-list-title .list-img-box image {
+  width: 100%;
+  height: 100%;
+}
+
+.home-page .nhuman-qi-weekly-list-title .rule-img-box {
+  width: 116rpx;
+  height: 38rpx;
+  position: absolute;
+  right: 43rpx;
+  top: 70rpx;
+}
+
+.home-page .nhuman-qi-weekly-list .container .box {
+  display: flex;
+  width: 100%;
+  margin-bottom: 4rpx;
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .userinfo-view {
+  width: 146rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #efefef;
+}
+
+/* .home-page .nhuman-qi-weekly-list .container .box .userinfo-view .userinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+/* .home-page .nhuman-qi-weekly-list .container .box .userinfo-view .content .userinfo .rank {
+  font-size: 60rpx;
+  font-family: PingFangSC-Semibold;
+  color: rgba(9, 9, 9, 1);
+  font-weight: bold;
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .userinfo-view .content .userinfo .name {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  color: rgba(51, 51, 51, 1);
+} */
+
+.home-page .nhuman-qi-weekly-list .container .box .userinfo-view .content {
+  /* width: 100%; */
+  text-align: center;
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .userinfo-view .content .rank {
+  font-size: 60rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(9, 9, 9, 1);
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .userinfo-view .content .name {
+  width: 140rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+/* .home-page .nhuman-qi-weekly-list .container .box .userinfo-view .content .name text {
+  display: inline-block;
+  text-align: left;
+} */
+
+.home-page .nhuman-qi-weekly-list .container .box .userinfo-view .pull-nhuman-qi-button {
+  width: 180rpx;
+  height: 43rpx;
+  background: rgba(56, 191, 123, 1);
+  border-radius: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .userinfo-view .pull-nhuman-qi-button text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .img-container {
+  display: flex;
+  width: 604rpx;
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .img-container .img-box {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.home-page .nhuman-qi-weekly-list .container .box .img-container .img-box:nth-child(2) {
+  margin: 0 2rpx;
+}
+
+/* 弹窗样式 */
+
+.dx-motal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dx-motal .motal-container {
+  /* background: url('https://idols.heywoodsminiprogram.com/images/ruleBg.png') no-repeat; *//* background-size: 100%; */
+  width: 600rpx;
+  border-radius: 16rpx;
+  z-index: 1000;
+  position: relative;
+  background: #fff;
+}
+
+.dx-motal .motal-container .topImg {
+  width: 600rpx;
+}
+
+.dx-motal .motal-container .text {
+  z-index: 999;
+  margin: 0 35rpx 0 37rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(40, 40, 40, 1);
+  line-height: 46rpx;
+}
+
+.dx-motal .motal-container .btn {
+  width: 540rpx;
+  height: 100rpx;
+  background: rgba(247, 77, 113, 1);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 69rpx;
+  margin-bottom: 30rpx;
+}
+
+.dx-motal .motal-container .btn text {
+  font-size: 38rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.foot-text {
+  width: 100%;
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+}
+
+.foot-text text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(56, 191, 123, 1);
+}
+
+.guide-collect {
+  position: fixed;
+  width: 284rpx;
+  height: 101rpx;
+  top: 122rpx;
+  right: 10rpx;
+  z-index: 9999;
+}
+
+.guide-collect image {
+  width: 100%;
+  height: 100%;
+}
+
+.guide-collect-animationList {
+  animation: guide-collect-animationList 0.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes guide-collect-animationList {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  25% {
+    transform: translate(0px, -6rpx);
+  }
+
+  100% {
+    transform: translate(0px, 0rpx);
+  }
+}
+
+.test{
+  width: 100rpx;
+  height: 80rpx;
+  position: fixed;
+  display: flex;
+  right: 5rpx;
+  top: 200rpx;
+  z-index: 100;
+}

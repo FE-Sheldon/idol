@@ -1,0 +1,52 @@
+/* components/loading/loading.wxss */
+.container{
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10rpx;
+  overflow: hidden;
+  width: 240rpx;
+  height: 240rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+}
+.container .loading {
+  width: 60rpx;
+  height: 55rpx;
+}
+
+.container .loading-text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 20rpx;
+}
+.loading-animation {
+  animation: loading-animation 2s;
+  /* animation-timing-function: ease; */
+  animation-iteration-count: infinite;
+  /* animation-direction:alternate; */
+}
+@keyframes loading-animation {
+  0% {
+    transform: scale3d(1, 1, 1); /*开始为原始大小*/
+  }
+
+  25% {
+    transform: scale3d(1.5, 1.5, 1.5); /*放大1.5倍*/
+  }
+
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  75% {
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+}

@@ -1,0 +1,34 @@
+/* pages/guide/guide.wxss */
+
+.guide_box {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.guide_box image {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.guide_box .count-down {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  overflow: hidden;
+  bottom: 200rpx;
+  right: 30rpx;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.36);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guide_box .count-down canvas {
+  width: 88rpx;
+  height: 88rpx;
+  /* background: red; */
+}

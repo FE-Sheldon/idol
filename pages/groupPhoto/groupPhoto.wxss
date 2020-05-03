@@ -1,0 +1,455 @@
+/* pages/groupPhoto/groupPhoto.wxss */
+
+/* @import "/assets/css/stylesheet.wxss"; */
+
+.groupPhoto-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #efefef;
+  overflow: hidden;
+}
+
+.groupPhoto-page .groupPhoto-page-header {
+  width: 100%;
+  height: 127rpx;
+  background: #3b3c42;
+  z-index: 9999;
+}
+
+/* canvas样式 */
+
+.groupPhoto-page .myCanvas {
+  width: 100%;
+  height: 951rpx;
+  position: absolute;
+  left: 1000rpx;
+  opacity: 0;
+  /* left: 10rpx; */
+  top: 20rpx;
+  /* background: red; */
+}
+
+.groupPhoto-page .userStarCanvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* border:2px solid red; *//* -webkit-border-radius: 32rpx;
+  -moz-border-radius: 32rpx;
+  -ms-border-radius:32rpx;
+  -o-border-radius:32rpx;
+  border-radius: 32rpx; */
+}
+
+/* canvas样式end */
+
+/* 各个模板共有的样式 */
+
+/* .groupPhoto-page .bg {
+  width: 720rpx;
+  height: 720rpx;
+  margin: 0 auto;
+  margin-top: 16rpx;
+  margin-bottom: 80rpx;
+} */
+
+/* .groupPhoto-page .user-photo-img-box, .groupPhoto-page .star-canvas1 {
+  width: 340rpx;
+  height: 340rpx;
+} */
+
+/* 各个模板共有的样式end */
+
+/* 模板1的样式 */
+
+.groupPhoto-page .photo-templet-bg-1 {
+  margin-top: 16rpx;
+}
+
+.groupPhoto-page .user-canvas1, .groupPhoto-page .star-canvas1 {
+  width: 340rpx;
+  height: 340rpx;
+  /* border-radius: 32rpx;
+  -webkit-border-radius: 32rpx;
+  -moz-border-radius: 32rpx;
+  overflow: hidden; *//* position: absolute; *//* top: 189rpx; *//* left: 14rpx; *//* background: red; */
+}
+
+.groupPhoto-page .photo-templet-bg-1 .bg {
+  margin: 0 auto;
+  width: 720rpx;
+  height: 720rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg1.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+}
+
+/* .groupPhoto-page .photo-templet-bg-1 .bg .container .star-canvas1 {
+  border-radius: 32rpx;
+  overflow: hidden;
+} */
+
+.groupPhoto-page .photo-templet-bg-1 .bg .container {
+  width: 690rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 模板1的样式end */
+
+/* 旧模板2的样式 */
+
+/* .groupPhoto-page .photo-templet-bg-2 .user-canvas2,
+.groupPhoto-page .photo-templet-bg-2 .star-canvas2 {
+  width: 340rpx;
+  height: 360rpx;
+  overflow: hidden;
+  z-index: 100;
+  -webkit-border-radius: 32rpx;
+  -moz-border-radius: 32rpx;
+  -ms-border-radius: 32rpx;
+  -o-border-radius: 32rpx;
+  border-radius: 32rpx;
+}
+
+
+.groupPhoto-page .photo-templet-bg-2 {
+  width: 720rpx;
+  height: 720rpx;
+  margin: 0 auto;
+  margin-top: 16rpx;
+  margin-bottom: 80rpx;
+}
+
+.groupPhoto-page .photo-templet-bg-2 .bg {
+  width: 720rpx;
+  height: 720rpx;
+  position: relative;
+}
+
+.groupPhoto-page .photo-templet-bg-2 .bg .bg-image {
+  z-index: 9999;
+  width: 720rpx;
+  height: 720rpx;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.groupPhoto-page .photo-templet-bg-2 .bg .container {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 720rpx;
+  height: 720rpx;
+}
+
+.groupPhoto-page .photo-templet-bg-2 .bg .userCanvas2-handle-view {
+  position: absolute;
+  left: 0rpx;
+  top: 20rpx;
+  width: 340rpx;
+  height: 360rpx;
+  z-index: 99999;
+}
+
+.groupPhoto-page .photo-templet-bg-2 .bg .container .user-photo-img-box {
+  height: 360rpx;
+  margin: 20rpx 0 0 20rpx;
+  border-radius: 32rpx;
+  overflow: hidden;
+}
+
+.groupPhoto-page .photo-templet-bg-2 .bg .container .item:nth-child(2) {
+  align-self: flex-end;
+} */
+
+/* 旧模板2的样式end */
+
+/* 模板2的样式 */
+
+.groupPhoto-page .photo-templet-bg-2 {
+  margin: 16rpx 0 80rpx 0;
+}
+
+.groupPhoto-page .user-canvas2, .groupPhoto-page .star-canvas2 {
+  width: 358rpx;
+  height: 426rpx;
+}
+
+.groupPhoto-page .photo-templet-bg-2 .bg {
+  margin: 0 auto;
+  width: 720rpx;
+  height: 720rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg2.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+}
+.groupPhoto-page .photo-templet-bg-2 .bg .container {
+  width: 720rpx;
+  display: flex;
+  justify-content: space-around;
+}
+/* 模板2的样式end */
+
+
+/* 模板3的样式 */
+
+.groupPhoto-page .photo-templet-bg-3 {
+  margin: 16rpx 0 80rpx 0;
+}
+
+.groupPhoto-page .user-canvas3, .groupPhoto-page .star-canvas3 {
+  width: 360rpx;
+  height: 360rpx;
+}
+
+.groupPhoto-page .photo-templet-bg-3 .bg {
+  width: 720rpx;
+  height: 720rpx;
+  display: flex;
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg3.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+  justify-content: space-between;
+}
+.groupPhoto-page .photo-templet-bg-3 .bg .user-canvas3 {
+   align-self: flex-end;
+}
+/* 模板3的样式end */
+
+
+/* 模板6的样式 */
+
+.groupPhoto-page .photo-templet-bg-6 .user-canvas6 {
+  width: 330rpx;
+  height: 330rpx;
+  overflow: hidden;
+  /* position: absolute; *//* top: 189rpx; *//* left: 14rpx; *//* background: red; */
+}
+
+.moveView {
+  width: 330rpx;
+  height: 330rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 20rpx 0 0 20rpx;
+  z-index: 9999;
+}
+
+.groupPhoto-page .photo-templet-bg-6 .bg {
+  position: relative;
+}
+
+.groupPhoto-page .photo-templet-bg-6 .bg .bg-image {
+  z-index: 100;
+  width: 720rpx;
+  height: 720rpx;
+  position: absolute;
+  left: -20rpx;
+  top: 0;
+}
+
+.groupPhoto-page .photo-templet-bg-6 .bg .container {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  width: 720rpx;
+  height: 100%;
+}
+
+.groupPhoto-page .photo-templet-bg-6 .bg .container .user-canvas6 {
+  height: 330rpx;
+  margin: 20rpx 0 0 20rpx;
+}
+
+.groupPhoto-page .photo-templet-bg-6 .bg .container .star-canvas1 {
+  height: 330rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+
+.groupPhoto-page .photo-templet-bg-6 .bg .container .item:nth-child(2) {
+  align-self: flex-end;
+}
+
+/* 模板6的样式end */
+
+/* 模板9的样式 */
+
+.groupPhoto-page .photo-templet-bg-9 .bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg9.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+}
+
+.groupPhoto-page .photo-templet-bg-9 .bg .container .user-canvas9 {
+  width: 300rpx;
+  height: 320rpx;
+}
+
+.groupPhoto-page .photo-templet-bg-9 .bg .container .star-canvas1 {
+  width: 300rpx;
+  height: 320rpx;
+}
+
+.groupPhoto-page .photo-templet-bg-9 .bg .container {
+  width: 640rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 模板9的样式end */
+
+/* 合成按钮样式 */
+
+.groupPhoto-page .synthesis-btn {
+  width: 600rpx;
+  height: 100rpx;
+  background: rgba(56, 191, 123, 1);
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 75rpx;
+  bottom: 20vh;
+}
+.groupPhoto-page .synthesis-btn-iphoneXStyle{
+  bottom: 30vh;
+}
+.groupPhoto-page .synthesis-btn text {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(249, 249, 249, 1);
+}
+
+/* 合成按钮样式end */
+
+/* 模板小图样式 */
+
+.groupPhoto-page .templet-mini-photo-container {
+  width: 100%;
+  height: 240rpx;
+  background: rgba(248, 248, 248, 1);
+  box-shadow: 0px -1px 0px 0px rgba(220, 220, 220, 1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.groupPhoto-page .iphoneXStyle {
+  bottom: 140rpx;
+}
+
+.groupPhoto-page .templet-mini-photo-container .contain {
+  width: 100%;
+  display: flex;
+}
+
+.groupPhoto-page .templet-mini-photo-container .contain .item {
+  margin: 20rpx 7rpx 20rpx 8rpx;
+  box-sizing: border-box;
+  border: 4rpx solid transparent;
+}
+
+.groupPhoto-page .templet-mini-photo-container .contain .active {
+  border: 4rpx solid #fa6964;
+}
+
+.groupPhoto-page .templet-mini-photo-container .contain .item image {
+  width: 160rpx;
+  height: 200rpx;
+}
+
+/* 模板小图样式end */
+
+.photo-templet-bg {
+  margin-top: 16rpx;
+  margin-bottom: 70rpx;
+}
+
+/* .photo-templet-bg-10 .bg {
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg10.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+  width: 720rpx;
+  height: 721rpx;
+  position: relative;
+  margin: 0 auto;
+}
+
+.photo-templet-bg-11 .bg {
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg11.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+  width: 720rpx;
+  height: 721rpx;
+  margin: 0 auto;
+  position: relative;
+}
+
+.photo-templet-bg-12 .bg {
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg12.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+  width: 720rpx;
+  height: 721rpx;
+  margin: 0 auto;
+  position: relative;
+} */
+
+.photo-templet-bg .bg {
+  background: url("https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg10.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+  width: 720rpx;
+  height: 721rpx;
+  position: relative;
+  margin: 0 auto;
+}
+
+.photo-templet-bg-10 .star-img-box {
+  position: absolute;
+  width: 305rpx;
+  height: 305rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 108rpx;
+  top: 90rpx;
+}
+
+.photo-templet-bg-11 .star-img-box {
+  position: absolute;
+  width: 305rpx;
+  height: 305rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 258rpx;
+  top: 224rpx;
+}
+
+.photo-templet-bg-12 .star-img-box {
+  position: absolute;
+  width: 305rpx;
+  height: 305rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 316rpx;
+  top: 296rpx;
+}

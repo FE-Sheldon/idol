@@ -1,0 +1,156 @@
+<!--pages/groupPhoto/groupPhoto.wxml-->
+
+<view class='groupPhoto-page'>
+  <view class='groupPhoto-page-header' style="padding-top:{{statusBarHeight}}rpx" id="HeaderNav">
+    <HeaderNav titleNameProp="合照"></HeaderNav>
+  </view>
+
+  <view class='group-photo-canvas' style='width:0px;height:0px;overflow:hidden;'>
+    <canvas class='myCanvas' canvas-id="myCanvas" disable-scroll="true"></canvas>
+  </view>
+  <view class='photo-templet-bg-1' wx:if="{{templetNumber == 1}}">
+    <view class='bg'>
+      <view class='container'>
+        <view class='user-canvas1' bindtouchmove='moveUserPhoto' bindtouchend='endMoveUserPhoto' bindtouchstart='startMoveUserPhoto'>
+          <canvas canvas-id='userCanvas1' class='userStarCanvas'></canvas>
+        </view>
+        <view class='star-canvas1' bindtouchmove='moveStarPhoto' bindtouchend='endMoveStarPhoto' bindtouchstart='startMoveStarPhoto'>
+          <!-- <image src='{{starPhotoSrc}}'></image> -->
+          <canvas canvas-id='starCanvas1' class='userStarCanvas'></canvas>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class='photo-templet-bg-2' wx:if="{{templetNumber == 2}}">
+    <view class='bg'>
+      <view class='container'>
+        <view class='user-canvas2'>
+          <canvas canvas-id='userCanvas2' class='userStarCanvas'>
+            <cover-view class='userCanvas2-handle-view' catchtouchmove='moveUserPhoto' catchtouchend='endMoveUserPhoto' catchtouchstart='startMoveUserPhoto'></cover-view>
+            <cover-view class='bg-image'>
+              <cover-image src='/assets/images/photoTempletBg2.png'></cover-image>
+            </cover-view>
+          </canvas>
+        </view>
+        <view class='star-canvas2 item' bindtouchmove='moveStarPhoto' bindtouchend='endMoveStarPhoto' bindtouchstart='startMoveStarPhoto'>
+          <canvas canvas-id='starCanvas2' class='userStarCanvas'></canvas>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+  <view class='photo-templet-bg-2' wx:if="{{templetNumber == 2}}">
+    <view class='bg'>
+      <view class='container'>
+        <view class='user-canvas2' bindtouchmove='moveUserPhoto' bindtouchend='endMoveUserPhoto' bindtouchstart='startMoveUserPhoto'>
+          <canvas canvas-id='userCanvas2' class='userStarCanvas'></canvas>
+        </view>
+        <view class='star-canvas2' bindtouchmove='moveStarPhoto' bindtouchend='endMoveStarPhoto' bindtouchstart='startMoveStarPhoto'>
+          <canvas canvas-id='starCanvas2' class='userStarCanvas'></canvas>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='photo-templet-bg-3' wx:if="{{templetNumber == 3}}">
+    <view class='bg'>
+      <view class='user-canvas3' bindtouchmove='moveUserPhoto' bindtouchend='endMoveUserPhoto' bindtouchstart='startMoveUserPhoto'>
+        <canvas canvas-id='userCanvas3' class='userStarCanvas'></canvas>
+      </view>
+      <view class='star-canvas3' bindtouchmove='moveStarPhoto' bindtouchend='endMoveStarPhoto' bindtouchstart='startMoveStarPhoto'>
+        <canvas canvas-id='starCanvas3' class='userStarCanvas'></canvas>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <!-- <view class='photo-templet-bg-6' wx:if="{{templetNumber == 6}}">
+    <view class='bg'>
+      <view class='bg-image'>
+        <image src='/assets/images/photoTempletBg6.png'></image>
+      </view>
+      <view class='container'>
+        <canvas class='user-canvas6' canvas-id='userCanvas6' bindtouchmove='moveUserPhoto' bindtouchend='endmove' bindtouchstart='startmove' disable-scroll="true"></canvas>
+        <view class='star-photo-img-box item'>
+          <image src='{{starPhotoSrc}}'></image>
+        </view>
+
+      </view>
+
+    </view>
+  </view> -->
+
+
+  <!-- <view class='photo-templet-bg-9' wx:if="{{templetNumber == 9}}">
+    <view class='bg'>
+      <view class='container'>
+        <canvas class='user-canvas9' canvas-id='userCanvas9' bindtouchmove='moveUserPhoto' bindtouchend='endmove' bindtouchstart='startmove' disable-scroll="true"></canvas>
+
+        <view class='star-photo-img-box'>
+          <image src='{{starPhotoSrc}}'></image>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- <view class='photo-templet-bg-10 photo-templet-bg' wx:if="{{templetNumber == 10}}">
+    <view class='bg'>
+      <view class='star-img-box'>
+        <image src='{{starPhotoSrc}}'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='photo-templet-bg-11 photo-templet-bg' wx:if="{{templetNumber == 11}}">
+    <view class='bg'>
+      <view class='star-img-box'>
+        <image src='{{starPhotoSrc}}'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='photo-templet-bg-12 photo-templet-bg' wx:if="{{templetNumber == 12}}">
+    <view class='bg'>
+      <view class='star-img-box'>
+        <image src='{{starPhotoSrc}}'></image>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- <view class='photo-templet-bg-{{templetNumber}} photo-templet-bg'>
+    <view class='bg' style="background: url('https://idols.heywoodsminiprogram.com/groupPhotoTempletBg/photoTempletBg{{templetNumber}}.png') no-repeat;background-size:100%;">
+      <view class='star-img-box'>
+        <image src='{{starPhotoSrc}}'></image>
+      </view>
+    </view>
+  </view> -->
+  <!-- 合成按钮内容 -->
+  <form bindsubmit="formIdCollect" report-submit="true">
+    <button form-type="submit" hover-class="none" open-type="getUserInfo" bindgetuserinfo="synthesisPhoto">
+      <view class="synthesis-btn {{isIphoneX == true? 'synthesis-btn-iphoneXStyle':''}}">
+        <text>生成</text>
+      </view>
+    </button>
+  </form>
+
+  <!-- 合成按钮内容end -->
+
+
+  <!-- 模板小图内容 -->
+  <scroll-view class="templet-mini-photo-container {{isIphoneX == true? 'iphoneXStyle':''}}" scroll-x scroll-into-view="{{toView}}" scroll-with-animation>
+    <view class='contain'>
+      <view class="item {{currentTempletIndex == index? 'active' : ''}}" wx:for="{{templetMiniPhotoList}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" bindtap='clickTemplet' id="t{{index}}">
+        <image src="{{item.src}}"></image>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 模板小图内容end -->
+</view>
+
+<!-- loading -->
+<Loading wx:if="{{showLoading}}" titleProp="正在生成.."></Loading>
+<!-- loading end -->

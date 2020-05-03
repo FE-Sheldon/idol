@@ -1,0 +1,7 @@
+<!--components/loading/loading.wxml-->
+<view class='container'>
+  <view>
+    <image src="../../assets/images/loadingHeart.png" class="loading loading-animation" />
+    <view class='loading-text'>{{titleProp}}</view>
+  </view>
+</view>

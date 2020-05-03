@@ -1,0 +1,36 @@
+<!--pages/uploadResult.wxml-->
+<view class='uploadResult-page'>
+  <view class='uploadResult-page-header' style="padding-top:{{statusBarHeight}}rpx" id="HeaderNav">
+    <HeaderNav titleNameProp="上传爱豆照片" arrowLeftShowProp="{{false}}"></HeaderNav>
+  </view>
+  <view class='upload-success' wx:if="{{uploadState == 'true'}}">
+    <view class='upload-success-img-box'>
+      <image src='../../assets/images/uploadSuccessImg.png' mode='widthFix'></image>
+    </view>
+    <view class='text-1'>
+      <text>我们将尽快审核，审核结果将通过服务中心提醒你</text>
+    </view>
+    <view class='btn'>
+      <view class='return-index-page' bindtap='goStarIndexPage'>
+        <text>返回爱豆主页</text>
+      </view>
+      <view class='continue-upload' bindtap='continueUpload'>
+        <text>继续上传</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='network-bad' wx:if="{{uploadState == 'false' || uploadState == 'undefined'}}">
+    <view class='network-bad-img-box'>
+      <image src='../../assets/images/loadFail.png' mode='widthFix'></image>
+    </view>
+    <view class='text'>加载失败，请检查网络</view>
+    <view class='btn'>
+      <text>重新加载</text>
+    </view>
+  </view>
+</view>
+
+<!-- loading -->
+<Loading wx:if="{{showLoading}}" titleProp="正在上传..."></Loading>
+<!-- loading end -->

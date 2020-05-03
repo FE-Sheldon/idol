@@ -1,0 +1,133 @@
+/* components/HeaderNav2/headerNav2.wxss */
+
+/* 顶部导航的样式 */
+
+.header-nav .container {
+  text-align: center;
+  position: relative;
+}
+
+.header-nav .container .nav-title {
+  /* padding-top:63rpx; */
+  position: absolute;
+  /* top: 64rpx; */
+  top: 78rpx;
+  /* top: 58rpx; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 34rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+}
+.header-nav .container .nav-title-isIponeXTop {
+  top: 62rpx;
+} 
+
+.header-nav .container .jiantou-img-box {
+  display: flex;
+  justify-content: flex-start;
+  width: 100rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 21rpx;
+  top: 58rpx;
+  /* top:10rpx; */
+  z-index: 9999;
+}
+
+.header-nav .container .arrow-left-fixed {
+  display: flex;
+  justify-content: flex-start;
+  width: 100rpx;
+  height: 70rpx;
+  position: fixed;
+  left: 21rpx;
+  top: 58rpx;
+  /* top:10rpx; */
+}
+
+.header-nav .container .isIponeXTop {
+  top: 55rpx;
+}
+
+.header-nav .container .jiantou-img-box image,
+.header-nav .container .isIponeXTop image {
+  width: 23rpx;
+  height: 40rpx;
+}
+
+.return-page-view {
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  /* top:58rpx; */
+  top: 0rpx;
+  width: 160rpx;
+  height: 127rpx;
+  /* background: red; */
+}
+
+.isIponeX-return-page-view {
+  top: -64rpx;
+  height: 170rpx;
+}
+
+.return-page-view image {
+  position: absolute;
+  width: 23rpx;
+  left: 20rpx;
+  top: 57rpx;
+  /* margin-left: 20rpx; */
+  height: 19.1304px;
+}
+.isIponeX-return-page-view image{
+  top: 101rpx;
+}
+.return-page-view-fixed {
+  position: fixed;
+  /* top:20rpx; */
+  top: 0;
+  width: 150rpx;
+  /* background: red; */
+}
+
+.return-page-view-fixed image {
+  position: absolute;
+  left: 20rpx;
+  top: 57rpx;
+}
+
+.go-index-page-view {
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  /* top:58rpx; */
+  top: 26rpx;
+  width: 150rpx;
+  height: 100rpx;
+  /* background: red; */
+}
+
+.go-index-page-view image {
+  width: 44rpx;
+  margin-left: 20rpx;
+}
+
+.go-index-page-view-fixed {
+  position: fixed;
+  top: 20rpx;
+  width: 150rpx;
+  /* background: red; */
+}
+.isIponeX-return-index-page-view{
+   top: -44rpx;
+  height: 190rpx;
+}
+.isIponeX-return-index-page-view image{
+   margin-top: 80rpx;
+}
+/* 顶部导航的样式end */

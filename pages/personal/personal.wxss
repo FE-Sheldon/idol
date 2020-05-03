@@ -1,0 +1,333 @@
+/* pages/personal/personal.wxss */
+
+.personal-page {
+  background: #efefef;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.personal-page .header {
+  position: relative;
+  width: 100%;
+  height: 286rpx;
+}
+
+.personal-page .header .header-up {
+  width: 100%;
+  height: 201rpx;
+  background: url('https://idols.heywoodsminiprogram.com/images/personalheaderBg1.png');
+  background-size: 100%;
+}
+
+.personal-page .header .navigationBarTitleText {
+  font-size: 34rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(51, 51, 51, 1);
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  transform: translate(-50%, -50%);
+}
+
+.personal-page .header .user-info {
+  position: absolute;
+  bottom: 130rpx;
+  left: 39rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.personal-page .header .user-info .avatar-img-box {
+  z-index: 1000;
+  width: 76rpx;
+  height: 77rpx;
+  margin-right: 21rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.personal-page .header .user-info .nick-name {
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.personal-page .header .user-info .wxLoginBtn {
+  width: 230rpx;
+  height: 64rpx;
+}
+
+.personal-page .tab-nav {
+  overflow-x: hidden;
+  width: 100%;
+  height: 85rpx;
+  background: #fff;
+  z-index: 999;
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: 10rpx;
+  left: 0;
+}
+
+.personal-page .tab-nav .tab-nav-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.personal-page .tab-nav .item {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 359rpx;
+  border-bottom: 4rpx solid transparent;
+  box-sizing: border-box;
+}
+
+.personal-page .tab-nav .item .span {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+}
+
+.personal-page .tab-nav .active {
+  border-bottom: 4rpx solid #ec5979;
+}
+
+.personal-page .tab-nav .active .span {
+  display: inline-block;
+  height: 70rpx;
+  text-align: center;
+  padding: 0 30rpx;
+  line-height: 70rpx;
+  color: #ec5979;
+}
+
+.wjad-photo-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wjad-photo-list .box {
+  background: url('https://idols.heywoodsminiprogram.com/images/photoBg.png') no-repeat;
+  background-size: 100%;
+  width: 48%;
+  height: 428rpx;
+  margin: 1%;
+}
+
+.wjad-photo-list .box .img-box {
+  width: 360rpx;
+  height: 360rpx;
+}
+
+.wjad-photo-list .box .text {
+  width: 90%;
+  margin: 0 auto;
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wjad-photo-list .box .text .name {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+}
+
+.wjad-photo-list .box .text .photo-number {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(153, 153, 153, 1);
+}
+
+.personal-page .upload-photo-list {
+  width: 100%;
+  margin: 24rpx 0 24rpx 9rpx;
+}
+
+.personal-page .upload-photo-list .star-name-list {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.personal-page .upload-photo-list .star-name-list .item {
+  margin-right: 20rpx;
+  white-space: nowrap;
+  display: inline-block;
+  height: 42rpx;
+  line-height: 42rpx;
+  border: 2rpx solid #323337;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 22px;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+  padding: 0 20rpx;
+  text-align: center;
+}
+
+.personal-page .upload-photo-list .star-name-list .active {
+  border: 2rpx solid;
+  height: 44rpx;
+  line-height: 44rpx;
+  background: #323337;
+  color: rgba(255, 255, 255, 1);
+  padding: 0 20rpx;
+}
+
+.personal-page .uploadPhoto-container {
+  width: 100%;
+  /* column-count: 2;
+  column-gap: 0; *//* margin: 0 auto; *//* display: flex;
+  flex-direction: row; */
+}
+
+.personal-page .uploadPhoto-container .left-view,
+.personal-page .uploadPhoto-container .right-view {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.personal-page .uploadPhoto-container .box {
+  /* width: 100%;
+  box-sizing: border-box;
+  break-inside: avoid;
+  padding: 10rpx 10rpx 0 10rpx; */
+  padding-bottom: 10rpx;
+}
+
+.personal-page .uploadPhoto-container .box .item {
+  width: 360rpx;
+  background: #fff;
+}
+
+.personal-page .uploadPhoto-container .box .img-box {
+  width: 360rpx;
+}
+
+.personal-page .uploadPhoto-container .box .text {
+  width: 90%;
+  margin: 0 auto;
+  height: 60rpx;
+  /* line-height: 60rpx; */
+  display: flex;
+  align-items: center;
+}
+
+.personal-page .uploadPhoto-container .box .text text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(180, 180, 180, 1);
+}
+
+.personal-page .uploadPhoto-container .box .text .heart-img-box {
+  display: flex;
+  align-items: center;
+}
+
+.personal-page .uploadPhoto-container .box .text .heart-img-box image {
+  width: 22rpx;
+  height: 20rpx;
+  margin-right: 9rpx;
+}
+
+.personal-page .uploadPhoto-container .box .text .heart-img-box .like-number {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(180, 180, 180, 1);
+}
+
+.personal-page .no-wjad-list {
+  width: 322rpx;
+  margin: 0 auto;
+  margin-top: 168rpx;
+}
+
+.personal-page .no-upload-photo-list {
+  width: 424rpx;
+  margin: 0 auto;
+  margin-top: 168rpx;
+}
+
+/* 遮罩层样式 */
+
+.dx-motal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dx-motal .motal-container {
+  width: 480rpx;
+  height: 558rpx;
+  background: url("https://idols.heywoodsminiprogram.com/images/letterBg.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.dx-motal .motal-container .star-name {
+  position: absolute;
+  top: 44rpx;
+  right: 60rpx;
+}
+
+.dx-motal .motal-container .star-name text {
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+}
+
+.dx-motal .motal-container .text-content {
+  width: 354rpx;
+  height: 168rpx;
+  position: absolute;
+  top: 131rpx;
+  left: 70rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 69rpx;
+}
+
+.dx-motal .motal-container .btn {
+  position: absolute;
+  left: 38rpx;
+  bottom: 60rpx;
+  width: 400rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.dx-motal .motal-container .btn text {
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(247, 77, 113, 1);
+}

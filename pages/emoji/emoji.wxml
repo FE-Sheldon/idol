@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class='emoji'>
+  <view class='emoji-page-header' id="HeaderNav">
+    <HeaderNav arrowLeftShowProp="{{arrowLeftShowProp}}"></HeaderNav>
+  </view>
+  <view class='emojiInfo'>
+    <view class='emojiInfoCon clear'>
+      <image class='starImg fl' src='/assets/images/starImg.png'> </image>
+      <view class='emojiInfoCon_r fr'>
+        <view class='emojiInfoCon_t clear'>
+          <view class='starName redTxt fl'>{{starName}}</view>
+          <view class='fr'>支持
+            <text class='expressionThumbs redTxt'>{{expressionThumbs}}</text>
+          </view>
+        </view>
+        <!-- <view class='progressBar'>
+          <view id="progressBarFill"></view>
+        </view> -->
+        <progress class='progressBar' percent="{{percent}}" stroke-width="5" border-radius="2" activeColor="#3b3c68" backgroundColor="#e2e2e8" />
+        <view class='fr'>还差
+          <text class='nextThumbsCount redTxt'>{{nextThumbsCount}}</text>支持解锁新表情</view>
+      </view>
+    </view>
+    <view class='noticeCon clear'>
+      <image class='noticeIcon fl' src='/assets/images/noticeIcon.png'></image>
+      <text class='noticeTxt fr'>Tips: 点击已解锁表情，可保存到手机使用哦～</text>
+    </view>
+  </view>
+
+  <scroll-view class='emojiCon clear' id='emojiConK' scroll-y scroll-top="{{scrollTop}}">
+    <view class='emojiConK'>
+      <view wx:for="{{dataList}}" wx:key="{{item.quantity_term}}" >
+        <view class='emojiPartFinal emojiPartCenter' wx:if='{{item.isLast}}'>
+          <!-- <view class='finalEmojiCon  '> -->
+            <image class='finalEmojiBg ' src='/assets/images/finalEmojiBg.png'></image>
+            <image class='emojiStarIcon' src='/assets/images/emojiStar.gif'></image>
+            <image class='finalEmojiIcon' src='/assets/images/finalEmoji.png'></image>
+            <image class='finalImg' src='{{item.img_url}}' bindtap='previewImg' data-item="{{item}}"></image>
+            
+          <!-- </view> -->
+        </view>
+        <view class='emojiPart' id='emojiPart' wx:else>
+          <view class='monsterCon emojiPartCenter fl' wx:if='{{item.id%2!==0}}'>
+            <image class='monsterIcon' src='/assets/images/monsterIcon.png'></image>
+            <image class='monsterImg' src='{{item.img_url}}' bindtap='previewImg' data-item="{{item}}"></image>
+            <view class='emojiNumber'>{{item.id}}</view>
+            <image class='emojiShelvesIcon' src='/assets/images/emojiShelvesIcon.png' wx:if='{{item.unShelves}}'></image>
+            <image class='emojiNewIcon' src='/assets/images/emojiNewIcon.png' wx:if='{{!item.unShelves && item.isNew}}'></image>
+          </view>
+          <view class='angelCon emojiPartCenter fr' wx:else>
+            <image class='angelIcon' src='/assets/images/angelIcon.png'></image>
+            <image class='angelImg' src='{{item.img_url}}' bindtap='previewImg' data-item="{{item}}"></image>
+            <view class='emojiNumber'>{{item.id}}</view>
+            <image class='emojiShelvesIcon' src='/assets/images/emojiShelvesIcon.png' wx:if='{{item.unShelves}}'></image>
+            <image class='emojiNewIcon' src='/assets/images/emojiNewIcon.png' wx:if='{{!item.unShelves && item.isNew}}'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+
+  <!-- 授权 -->
+  <form class='bottomBtnForm' report-submit="true" bindsubmit="collectFormId" wx:if="{{btnType==1}}">
+    <button class='bottomBtn' form-type="submit" open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+      <image class='bottomBtnImg' src='/assets/images/supporIdoltBtn.png'></image>
+    </button>
+  </form>
+  <!-- 客服 -->
+  <form class='bottomBtnForm' report-submit="true" wx:elif="{{btnType==2}}" bindsubmit="bottomBtn">
+    <button class='bottomBtn' form-type="submit" open-type='contact' show-message-card="true" send-message-title="{{contactTitle}}" send-message-path="{{contactPath}}" send-message-img="{{contactImg}}">
+      <image class='bottomBtnImg' src='/assets/images/supporIdoltBtn.png'></image>
+    </button>
+  </form>
+  <!-- 支持 -->
+  <form class='bottomBtnForm' report-submit="true" bindsubmit="supporIdol" wx:elif="{{btnType==3 || btnType==4}}">
+    <button class='bottomBtn' form-type="submit">
+      <image class='bottomBtnImg' src='/assets/images/supporIdoltBtn.png' wx:if="{{btnType==3}}"></image>
+      <image class='bottomBtnImg' src='/assets/images/supporIdoltAgainBtn.png' wx:else></image>
+    </button>
+  </form>
+  <!-- 分享 -->
+  <form class='bottomBtnForm' bindsubmit="shareIdol" report-submit="true" wx:else="{{btnType==5}}">
+    <button class='bottomBtn' form-type="submit" open-type='share'>
+      <image class='bottomBtnImg' src='/assets/images/emojiSharetBtn.png'></image>
+    </button>
+  </form>
+</view>

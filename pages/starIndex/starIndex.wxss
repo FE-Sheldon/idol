@@ -1,0 +1,793 @@
+/* pages/starIndex/starIndex.wxss */
+
+.starIndex-page {
+  background: #efefef;
+  /* min-height: 92.5vh; */
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.scroll-lock {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.starIndex-page .starIndex-page-header {
+  width: 100%;
+  height: 127rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* background: red; */
+  z-index: 9999;
+}
+
+.starIndex-page-header {
+  width: 100%;
+  height: 127rpx;
+  /* position: fixed; *//* left: 0; *//* top: 0; *//* background:left-view #3b3c42; *//* z-index: 9999; */
+}
+
+.starIndex-page .header {
+  width: 100%;
+  /* height: 568rpx; *//* height: 678rpx; */
+  height: 653rpx;
+  position: relative;
+  /* margin-bottom: 8rpx; */
+}
+
+.starIndex-page .header .music-icon-img-box {
+  position: absolute;
+  width: 50rpx;
+  height: 84rpx;
+  left: 46rpx;
+  bottom: 176rpx;
+  z-index: 201;
+}
+
+.starIndex-page .header .music-name {
+  width: 309rpx;
+  height: 53rpx;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 200;
+}
+
+.starIndex-page .header .music-name .disc-am {
+  animation: disc-am 3s linear infinite;
+}
+
+@keyframes disc-am {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.starIndex-page .header .music-name .img-box {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.starIndex-page .header .music-name .text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.starIndex-page .header .bg {
+  width: 100%;
+  height: 578rpx;
+}
+
+.starIndex-page .header .bg image {
+  width: 100%;
+  /* height: 100%; */
+  -webkit-filter: blur(45rpx);
+  filter: blur(45rpx);
+  transform: scale(1.1);
+  /* background: rgba(0, 0, 0, 0.5) */
+}
+
+.starIndex-page .header .titleName {
+  font-size: 34rpx;
+  font-family: PingFangSC-Medium;
+  z-index: 999;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 50%;
+  top: 13%;
+  transform: translate(-50%, -50%);
+}
+
+.starIndex-page .header .arrowLeft-img-box {
+  z-index: 999;
+  width: 23rpx;
+  height: 40rpx;
+  position: fixed;
+  left: 26rpx;
+  top: 58rpx;
+}
+
+.starIndex-page .header .photo-left-icon-img-box {
+  z-index: 999;
+  width: 24rpx;
+  position: absolute;
+  left: 56rpx;
+  top: 149rpx;
+}
+
+.starIndex-page .header .top-shade-img-box {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* height:128rpx;
+  background:linear-gradient(90deg,rgba(0,0,0,1),rgba(0,0,0,0)); */
+}
+
+.starIndex-page .header .photo-img-box {
+  z-index: 100;
+  width: 309rpx;
+  height: 406rpx;
+  position: absolute;
+  left: 80rpx;
+  top: 137rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+.starIndex-page .header .star-img-box {
+  z-index: 999;
+  width: 242rpx;
+  position: absolute;
+  right: 51rpx;
+  top: 199rpx;
+}
+
+.starIndex-page .header .name {
+  /* width: 188rpx; */
+  width: 100%;
+  z-index: 100;
+  font-size: 34rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 24%;
+  top: 273rpx;
+}
+
+.starIndex-page .header .ranking {
+  /* width: 188rpx; */
+  width: 100%;
+  z-index: 999;
+  font-size: 24rpx;
+  text-align: center;
+  /* font-family: PingFangSC-Ultralight; */
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 23%;
+  /* left: 518rpx; */
+  bottom: 266rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+}
+
+.starIndex-page .header .hr {
+  z-index: 999;
+  width: 188rpx;
+  height: 1px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0.41;
+  position: absolute;
+  right: 101rpx;
+  top: 339rpx;
+}
+
+.starIndex-page .header .nhuman-qi-number {
+  /* width: 188rpx;
+  text-align: center;
+  z-index: 999;
+  font-size: 30rpx;
+  font-family: PingFangSC-Ultralight;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  right: 101rpx;
+  top: 356rpx; */
+  z-index: 999;
+  width: 100rpx;
+  height: 23rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  right: 150rpx;
+  top: 283rpx;
+}
+
+.starIndex-page .header .add-popular-number {
+  font-size: 48rpx;
+  font-family: "WenYue XinQingNianTi W8";
+  color: #ff718f;
+  font-weight: 600;
+  /* position: absolute; *//* top: 213rpx; *//* right: 80rpx; */
+  animation: add-popular-number 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.3s;
+}
+
+@keyframes add-popular-number {
+  form {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.starIndex-page .header .popularity-num {
+  width: 150rpx;
+  font-size: 48rpx;
+  font-family: "WenYue XinQingNianTi W8";
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  /* right: 100rpx; */
+  right: 125rpx;
+  top: 213rpx;
+  text-align: center;
+}
+
+.starIndex-page .header .pull-nhuman-qi-button {
+  z-index: 999;
+  position: absolute;
+  right: 70rpx;
+  /* top: 426rpx; */
+  bottom: 170rpx;
+}
+
+.starIndex-page .header .pull-nhuman-qi {
+  background: rgba(56, 191, 123, 1);
+  border-radius: 31rpx;
+  width: 240rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.starIndex-page .header .pull-nhuman-qi .pull-icon-img-box {
+  margin-top: 6rpx;
+  z-index: 999;
+  width: 42rpx;
+}
+
+.starIndex-page .header .pull-nhuman-qi .text {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.starIndex-page .wjad-img-box {
+  position: relative;
+  width: 100%;
+  height: 117rpx;
+}
+
+.starIndex-page .wjad-img-box .avatar {
+  width: 416rpx;
+  position: absolute;
+  top: 15rpx;
+  left: 304rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.starIndex-page .wjad-img-box .avatar .avatar-box,
+.starIndex-page .wjad-img-box .avatar .more-icon {
+  width: 86rpx;
+  height: 86rpx;
+}
+
+/* tab样式 */
+
+.starIndex-page .tab-nav {
+  overflow-x: hidden;
+  width: 100%;
+  height: 85rpx;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background: #fff;
+  position: absolute;
+  bottom: 10rpx;
+  left: 0;
+  border-radius:10rpx 10rpx 0px 0px;
+}
+
+.starIndex-page .tab-nav .tab-nav-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.starIndex-page .tab-nav .item {
+  width:359px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 7rpx solid transparent;
+  box-sizing: border-box;
+}
+
+.starIndex-page .tab-nav .active {
+  border-bottom: 7rpx solid #ec5979;
+}
+
+.starIndex-page .tab-nav .item .text {
+  font-size: 30rpx;
+  font-weight: 400;
+  font-family: PingFangSC-Medium;
+  color: rgba(184, 184, 184, 1);
+  /* padding-bottom: 20rpx; */
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.starIndex-page .tab-nav .active .text {
+  color: rgba(236, 89, 121, 1);
+}
+
+/* .starIndex-page .tab-nav .item .box {
+  width: 215rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* .starIndex-page .tab-nav .item .box .text {
+  margin-left: 12rpx;
+  font-size: 34rpx;
+  font-family: FZZCHJW--GB1-0;
+  color: rgba(184, 184, 184, 1);
+} */
+
+/* .starIndex-page .tab-nav .active .box {
+  width: 215rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(50, 51, 55, 1);
+  border-radius: 35rpx;
+} */
+
+.starIndex-page .tab-nav .active .box .text {
+  margin-left: 12rpx;
+  font-size: 34rpx;
+  font-family: FZZCHJW--GB1-0;
+  color: #fff;
+  z-index: 999;
+}
+
+/* tab样式 */
+
+/* 照片瀑布流样式 */
+
+.starIndex-page .photo-container {
+  /* column-count: 2;
+  column-gap: 0; */
+  width: 100%;
+  /* display: flex;
+  /* flex-direction: row; margin: 0 auto; */
+}
+
+.starIndex-page .photo-container .left-view,
+.starIndex-page .photo-container .right-view {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.starIndex-page .photo-container .box {
+  /* box-sizing: border-box;
+  break-inside: avoid;
+  padding: 10rpx 10rpx 0 10rpx;
+  width: 100%; */
+  padding-bottom: 10rpx;
+}
+
+.starIndex-page .photo-container .box .item {
+  width: 360rpx;
+  background: #fff;
+}
+
+.starIndex-page .photo-container .box .item .img-box {
+  width: 360rpx;
+}
+
+.starIndex-page .photo-container .box .item .user-info {
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  justify-content: space-between;
+  margin: 0 10rpx;
+}
+
+.starIndex-page .photo-container .box .item .user-info .left,
+.starIndex-page .photo-container .box .item .user-info .right {
+  display: flex;
+  align-items: center;
+}
+
+.starIndex-page .photo-container .box .item .user-info .left .nick-name {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+  /* margin-top: -8rpx; */
+}
+
+.starIndex-page .photo-container .box .item .user-info .right .like-number {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(180, 180, 180, 1);
+}
+
+.starIndex-page .photo-container .box .item .user-info .left .avaimg {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 9rpx;
+}
+
+.starIndex-page .photo-container .like-number {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(180, 180, 180, 1);
+}
+
+/* 照片瀑布流样式end */
+
+/* 上传图片入口按钮样式 */
+
+.starIndex-page .uploadBtn {
+  z-index: 999;
+  width: 160rpx;
+  position: fixed;
+  right: 23rpx;
+  bottom: 69rpx;
+}
+.starIndex-page .upload-swiper{
+  z-index: 999;
+  width: 140rpx;
+  height: 44rpx;
+  position: fixed;
+  right: 32rpx;
+  bottom: 93rpx;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  line-height: 44rpx;
+}
+.starIndex-page .upload-swiper swiper{  
+  width: 120rpx;
+  height: 44rpx;
+}
+.starIndex-page .upload-swiper swiper-item image{
+  width: 120rpx;
+  height: 22rpx;
+}
+.guide-collect {
+  position: fixed;
+  width: 284rpx;
+  height: 101rpx;
+  top: 122rpx;
+  right: 10rpx;
+  z-index: 9999;
+}
+
+.guide-collect image {
+  width: 100%;
+  height: 100%;
+}
+
+.guide-collect-animationList {
+  animation: guide-collect-animationList 0.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes guide-collect-animationList {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  25% {
+    transform: translate(0px, -6rpx);
+  }
+
+  100% {
+    transform: translate(0px, 0rpx);
+  }
+}
+
+.footer-text {
+  margin: 37rpx 0;
+  text-align: center;
+}
+
+.footer-text text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(56, 191, 123, 1);
+}
+
+/* 上传图片入口按钮样式end */
+
+/* 点击goback的空标签区域样式 */
+
+/* .return-page-view{
+  z-index: 1000;
+  width: 150rpx;
+  height: 132rpx;
+  position: fixed;
+  top: 0;
+  left: 10rpx;
+} */
+
+/* 点击goback的空标签区域样式end */
+
+/*无缝滚动  */
+
+.seamlessscrolling {
+  /* background-color: #cccccc; */
+  position: relative;
+  overflow: hidden;
+}
+
+.seamlessscrolling view {
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* 蒙版 */
+
+.masking {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 568rpx;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*无缝滚动  */
+
+/* 播放列表样式 */
+
+.music-play-list {
+  width: 100%;
+  height: 620rpx;
+  position: fixed;
+  left: 0;
+  bottom: -620rpx;
+  /* transform: translateY(0rpx); */
+  z-index: 9999;
+  /* opacity: 0; */
+}
+
+.music-play-list .head {
+  width: 100%;
+  height: 72rpx;
+  background: rgba(55, 55, 58, 1);
+  border-radius: 18rpx 18rpx 0px 0px;
+  position: relative;
+  z-index: 9999;
+}
+
+.music-play-list .main {
+  position: relative;
+  z-index: 9999;
+}
+
+.music-play-list .head .title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.music-play-list .close {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translate(0, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-play-list .close image {
+  width: 29rpx;
+  height: 29rpx;
+}
+
+.music-play-list scroll-view {
+  z-index: 9999;
+  background: #323337;
+}
+
+.music-play-list .main {
+  width: 100%;
+  /* height: 548rpx; */
+  height: 100%;
+  background: #323337;
+  z-index: 9999;
+}
+
+.music-play-list .main .contain {
+  height: 100%;
+  z-index: 9999;
+}
+
+.music-play-list .main .contain .box {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30rpx;
+  height: 90rpx;
+  border-bottom: 2rpx solid #39393c;
+}
+
+.music-play-list .main .contain .box .music-name {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(204, 205, 206, 1);
+  z-index: 9999;
+}
+
+.music-play-list .main .contain .box-active .music-name {
+  color: #38bf7b;
+}
+
+.music-play-list .main .contain .box .handlebtn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-play-list .main .contain .box .handlebtn .play {
+  width: 26rpx;
+  height: 30rpx;
+}
+
+.music-play-list .main .contain .box .handlebtn .pause {
+  width: 16rpx;
+  height: 26rpx;
+}
+
+/* 无音乐的样式 */
+
+.music-play-list .no-muisc-list {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #323337;
+  box-sizing: border-box;
+}
+
+.music-play-list .no-muisc-list .img-box {
+  width: 132rpx;
+  height: 132rpx;
+  margin: 0 auto;
+  padding-top: 119rpx;
+  margin-bottom: 70rpx;
+}
+
+.music-play-list .no-muisc-list text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(132, 133, 138, 1);
+}
+
+.music-play-list .no-muisc-list .text-2 .left text {
+  color: #fff;
+  margin-right: 10rpx;
+}
+
+.music-play-list .main .contain .music-list-footer {
+  text-align: center;
+  position: absolute;
+  bottom: 29rpx;
+  left: 130rpx;
+}
+
+.music-play-list .main .contain .music-list-footer2 {
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.music-play-list .main .contain .music-list-footer text,
+.music-play-list .main .contain .music-list-footer2 text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(132, 133, 138, 1);
+}
+
+.music-play-list .main .contain .music-list-footer .text-2 text,
+.music-play-list .main .contain .music-list-footer2 .text-2 text {
+  color: #fff;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+/* 无音乐的样式 */
+
+.show-music-playlist-am {
+  animation: show-music-playlist-am 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  /* animation-delay: 0.3s; */
+}
+
+@keyframes show-music-playlist-am {
+  form {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-685rpx);
+  }
+}
+
+.hide-music-playlist-am {
+  animation: hide-music-playlist-am 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes hide-music-playlist-am {
+  0% {
+    transform: translateY(-685rpx);
+  }
+
+  100% {
+    transform: translateY(0rpx);
+  }
+}
+
+/* 播放列表样式 */

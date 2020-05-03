@@ -1,0 +1,220 @@
+<!--pages/photoDetail/photoDetail.wxml-->
+<view class="photoDetail-page {{banScroll === true ? 'scroll-lock' : ''}}">
+  <view class='photoDetail-page-header' style="padding-top:{{statusBarHeight}}rpx" id="HeaderNav">
+    <HeaderNav titleNameProp="爱豆甜品" arrowLeftIsFixedProp="{{false}}" isIphoneXProp="{{isIphoneX}}"></HeaderNav>
+  </view>
+  <view class='photo-swiper-container'>
+    <view class='loading-box' wx:if="{{loading}}">
+      <image src="../../assets/images/loadingHeart.png" class="slide-image loading loading-animation" />
+      <view class='loading-text' style='margin-top:20rpx;'>正在加载...</view>
+    </view>
+
+    <swiper bindchange="swiperChange" bindtap='addPopular' circular="{{true}}" current="{{currentIndex}}" duration="200" wx:if="{{!loading}}">
+      <block wx:for="{{detailPic.lists}}" wx:key="{{item.detail.star_id}}">
+        <swiper-item class="{{item.detail.height * windowWidth / item.detail.width > windowHeight? 'longPhotoStyle' : 'shortPhotoStyle'}}" data-src="{{item.detail.pic_artwork}}" data-isLong="{{item.detail.height * windowWidth / item.detail.width}}">
+          <scroll-view scroll-y bindscroll="imgScroll">
+            <image src="{{item.detail.pic_artwork}}" class="slide-image" mode='widthFix' />
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 加人气动画 -->
+  <view wx:for="{{popularAnimationList}}" wx:if="{{item.show == true}}" data-show="{{item.show}}" wx:key="{{item}}">
+    <view class="popular-view {{popularNumShow == true? 'popular-animation' : ''}}" style="left:{{item.pageX}}px;top:{{item.pageY}}px;z-index:1000;" wx:if="{{item.popularTime != null}}">
+      <!-- <text>人气+{{item.popularTime}}</text> -->
+      <image src="../../assets/images/{{item.popularTime}}.png" style='width:120rpx;height:44rpx;'></image>
+    </view>
+  </view>
+  <!-- 加人气动画end -->
+
+  <!-- 分享加人气动画 -->
+  <view class='share-add-popular' wx:if="{{sharePopularShow}}">
+    <view class="img-box share-popular-animation">
+      <image src="../../assets/images/shareAddPopular/wenzi.png" class='img1'></image>
+      <image src="../../assets/images/shareAddPopular/{{sharePopularIcon1}}.png" class='img2 number{{sharePopularIcon1}}'></image>
+      <image src="../../assets/images/shareAddPopular/{{sharePopularIcon2}}.png" class='img3 number{{sharePopularIcon2}}' wx:if="{{sharePopularIcon2 != ''}}"></image>
+    </view>
+  </view>
+  <!-- 分享加人气动画end -->
+
+  <view wx:for="{{dialogueAnimationList}}" wx:if="{{item.show == true}}" data-show="{{item.show}}" wx:key="{{item}}">
+    <!-- 对话动画 -->
+    <view class="popular-animation" style="left:{{item.dialoguePageX}}px;top:{{item.dialoguePageY}}px;z-index:1000;">
+      <image src="{{item.img_url}}" style="width:{{item.width}}rpx;height:{{item.height}}rpx;"></image>
+    </view>
+    <!-- 对话动画 -->
+  </view>
+  <!-- 爱心动画 -->
+
+  <view wx:for="{{animationList}}" wx:if="{{item.show == true}}" data-show="{{item.show}}" wx:key="{{item}}">
+    <form bindsubmit="heartFormIdCollect" report-submit="true">
+      <view class='heartIcon-img-box heart-animation' style="left:{{item.pageX}}px;top:{{item.pageY}}px;" catchtap="addPopular">
+        <button form-type="submit" hover-class="none">
+          <image src="../../assets/images/heartIcon.png" style='transform:rotate({{item.deg}}deg);' mode='widthFix'></image>
+        </button>
+      </view>
+    </form>
+  </view>
+  <!-- 爱心动画 -->
+  <!-- 顶部遮罩层内容 -->
+  <view class='top-shade-img-box'>
+    <image src="../../assets/images/topShade.png" mode='widthFix'></image>
+  </view>
+  <!-- 顶部遮罩层内容end -->
+
+  <!-- 顶部导航左箭头内容 -->
+  <!-- <view class='arrow-left-img-box' bindtap='returnPage'>
+    <image src="https://idols.heywoodsminiprogram.com/images/arrowLeft.png"></image>
+  </view> -->
+  <!-- 顶部导航左箭头内容end -->
+  <!-- 点击goback的空标签区域 -->
+  <!-- <view class='return-page-view' bindtap='returnPage'></view> -->
+  <!-- 点击goback的空标签区域end -->
+  <!-- 昵称显示内容 -->
+  <view class='nick-name'>
+    <text>{{nickName}}</text>
+    <text>上传</text>
+  </view>
+  <!-- 昵称显示内容end -->
+
+  <!-- 人气显示内容 -->
+  <!-- <view class='popular-container' wx:if="{{popularNumShow}}"> -->
+  <!-- <view class='img-box'>
+      <image src="../../assets/images/popularHot.png" mode='widthFix'></image>
+    </view> -->
+  <!-- <view class='popular-number'>人气+{{popularTime}}</view>
+  </view> -->
+  <!-- 人气显示内容end-->
+  <view class='handle-btn' style="{{groupPhotoBtnShow == false? 'height:588rpx;':''}}">
+    <!-- 点赞按钮内容 -->
+    <form bindsubmit="formIdCollect" report-submit="true" class='like'>
+      <button form-type="submit" hover-class="none">
+        <view class='img-box' bindtap='getThumbsTime'>
+          <image src="../../assets/images/yizan.png" mode='widthFix' wx:if="{{isThumbs==1}}" class="{{likeAnimationShow==true?'like-animation':''}}"></image>
+          <image src="../../assets/images/weizan.png" mode='widthFix' wx:if="{{isThumbs==0}}"></image>
+          <view class='like-number'>{{thumbsTime}}</view>
+        </view>
+      </button>
+    </form>
+    <!-- 点赞按钮内容end -->
+
+    <!-- 下载按钮内容 -->
+    <form bindsubmit="downloadPhoto" report-submit="true" data-buttonType='download' class='download'>
+      <button form-type="submit" hover-class="none" open-type="{{openType}}" bindopensetting="openSettingCallback">
+        <view class='img-box'>
+          <image src="../../assets/images/xiazai.png" mode='widthFix'></image>
+          <view class='download-number'>{{downloadTime}}</view>
+        </view>
+      </button>
+    </form>
+    <!-- 下载按钮内容end -->
+
+    <!-- 合照入口按钮 -->
+    <!-- <form bindsubmit="formIdCollect" report-submit="true" class='group-photo' wx:if="{{groupPhotoBtnShow}}">
+      <button form-type="submit" hover-class="none">
+        <view class='img-box' bindtap='groupPhoto' data-mode='rectangle'>
+          <image src="../../assets/images/groupPhotoIcon.png" mode='widthFix'></image>
+          <view class='group-photo-text'>合照</view>
+        </view>
+      </button>
+    </form> -->
+    <!-- 合照入口按钮end -->
+
+    <!-- 转发按钮 -->
+    <form bindsubmit="formIdCollect" report-submit="true" class='share'>
+      <button open-type="share" form-type="submit" hover-class="none" data-buttonType='share'>
+        <view class='img-box'>
+          <image src="../../assets/images/fenxiang.png" mode='widthFix' class="{{shareAnimationShow==true?'share-animation':''}}"></image>
+        </view>
+      </button>
+    </form>
+    <!-- 转发按钮end -->
+
+    <!-- 音符按钮 -->
+    <form bindsubmit="formIdCollect" report-submit="true" class="music-icon4">
+      <button form-type="submit">
+        <view class='img-box' bindtap='showPlayList'>
+          <image src="../../assets/images/musicIcon4.png" mode='widthFix' class="{{isPaused === true? '' : 'disc-am'}}"></image>
+        </view>
+      </button>
+    </form>
+    <!-- 音符按钮end -->
+  </view>
+  <!-- 音符按钮2 -->
+  <!-- <form bindsubmit="formIdCollect" report-submit="true" class='music-icon3' wx:if="{{musicList.length >0}}">
+    <button form-type="submit">
+      <view class='img-box'>
+        <image src="../../assets/images/musicIcon3.png" mode='widthFix'></image>
+      </view>
+    </button>
+  </form> -->
+  <!-- 音符按钮2end -->
+
+
+
+  <!-- 连续点击试试 -->
+  <!-- <view class='guideHandBg' wx:if="{{handShow}}" bindtap='addPopular'>
+    <image src='../../assets/images/guideHandBg.png'></image>
+  </view> -->
+  <view class='guide-hand' wx:if="{{handShow}}" bindtap='addPopular'>
+    <image src='../../assets/images/yindao2.gif'></image>
+  </view>
+  <!-- 连续点击试试end -->
+
+  <!-- 滑动看下一张 -->
+  <view class='guide-swiper-hand' wx:if="{{handSwiperShow}}" bindtap='addPopular'>
+    <image src='../../assets/images/huadongyindao.gif'></image>
+  </view>
+  <!-- 滑动看下一张 -->
+</view>
+
+<!-- 播放列表 -->
+<view class='music-play-list {{musicPlayAm}}'>
+  <view class='head'>
+    <view class='title'>爱豆甜品</view>
+    <view class='close' bindtap='hidePlayList'>
+      <image src='../../assets/images/closeBtn.png'></image>
+    </view>
+  </view>
+  <view class='no-muisc-list' wx:if="{{musicList.length == 0}}">
+    <view class='img-box'>
+      <image src='../../assets/images/musicIcon5.png'></image>
+    </view>
+
+    <view class='text-1'>
+      <text>爱豆还没有添加音乐</text>
+    </view>
+
+    <view class='text-2'>
+      <button open-type='contact' hover-class="none" class='left' bindcontact="musicContact">
+        <text>点击联系客服</text>
+      </button>
+      <text class='right'>添加吧~</text>
+    </view>
+  </view>
+  <scroll-view scroll-y class='main' scroll-with-animation scroll-into-view="{{toView}}">
+
+    <view class='contain'>
+      <view class="box {{musicIndex == index ? 'box-active' : ''}}" wx:for="{{musicList}}" bindtap='handlePlay' data-index='{{index}}' data-musicurl='{{item.url}}' data-starname="{{item.star_name}}" data-id='{{item.id}}' id="a{{index}}" wx:key="{{item.id}}">
+        <view class='music-name'>{{item.music_name}}</view>
+        <view class='handlebtn' wx:if="{{musicIndex == index}}">
+          <image src='../../assets/images/playBtn.png' class='play' wx:if="{{isPaused}}"></image>
+          <image src='../../assets/images/pauseBtn.png' class='pause' wx:if="{{!isPaused}}"></image>
+        </view>
+      </view>
+      <view class="{{musicList.length > 5? 'music-list-footer2' : 'music-list-footer'}}" wx:if="musicList.length < 5 || musicFooterShow ===true">
+        <text class='text-1'>想听其他歌？</text>
+        <button open-type='contact' hover-class="none" class='text-2' bindcontact="musicContact">
+          <text>点击联系客服</text>
+        </button>
+        <text class='text-3'>添加吧~</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- loading -->
+<Loading wx:if="{{showLoading}}" titleProp="{{loadingText}}"></Loading>
+<!-- loading end -->
+<!-- 播放列表 -->

@@ -1,0 +1,98 @@
+<!--pages/home/home.wxml-->
+<view class='home-page' id="home-page">
+  <view class="header">
+    <view class='search-img-box' bindtap='goSearchPage'>
+      <image src='../../assets/images/searchIcon.png' mode='widthFix'></image>
+    </view>
+    <view class='find-cue-name'>
+      <view class='text' bindtap='goStarIndexPage' wx:for="{{search_hot}}" data-starid="{{item.id}}" wx:key="{{item.id}}" data-starname="{{item.name}}">{{item.name}}</view>
+    </view>
+  </view>
+  <view class='headerFixed' wx:if="{{!!headerChange}}">
+    <view class='search-img-mini-box' bindtap='goSearchPage'>
+      <image src='../../assets/images/searchIconmini.png' mode='widthFix'></image>
+    </view>
+    <view class='navigationBarTitleText'>爱豆甜品</view>
+  </view>
+  <view class="nhuman-qi-weekly-list-title">
+    <view class='time'>
+      <view class='time-up'>
+        <text>{{yearMonth}}</text>
+      </view>
+      <view class='time-down'>
+        <text>{{currentDate}}</text>
+      </view>
+    </view>
+    <view class='list-img-box'>
+      <image src='../../assets/images/weeklyListImg.png' mode='widthFix'></image>
+    </view>
+    <view class='rule-img-box' bindtap='showModal'>
+      <image src='../../assets/images/ruleIcon.png' mode='widthFix'></image>
+    </view>
+  </view>
+
+  <scroll-view class='nhuman-qi-weekly-list'>
+    <view class='container'>
+      <form bindsubmit="formIdCollect" report-submit="true">
+        <button form-type="submit" hover-class="none">
+          <view class='box' wx:for="{{homeList.hot_list}}" wx:key="{{item.star_id}}" bindtap='goStarIndexPage' data-starid='{{item.star_id}}' data-starname='{{item.star_name}}' wx:if="{{item.pic_list.length==3}}">
+            <view class='userinfo-view' wx:if="{{item.pic_list.length==3}}">
+              <view class='content'>
+                <view class='rank'>{{index + 1}}</view>
+                <view class='name'>
+                  <text>{{item.star_name}}</text>
+                </view>
+                <!-- <view class='userinfo'>
+            <view class='rank'>{{index + 1}}</view>
+            <view class='name'>{{item.star_name}}</view>
+          </view> -->
+                <!-- <button open-type='share' data-starid='{{item.star_id}}' data-shareimgurl='{{item.pic_list[0].pic_share}}' data-sharestarname='{{item.star_name}}'>
+            <view class='pull-nhuman-qi-button'>
+              <text>为TA拉人气</text>
+            </view>
+          </button> -->
+              </view>
+            </view>
+            <view class='img-container'>
+              <view class='img-box' wx:for="{{item.pic_list}}" wx:for-item="imgs" wx:key="{{imgs.star_id}}" data-starid='{{imgs.star_id}}'>
+                <image src='{{imgs.pic_small}}' mode='widthFix' lazy-load='true'></image>
+              </view>
+            </view>
+          </view>
+        </button>
+      </form>
+    </view>
+  </scroll-view>
+  <view class='foot-text' wx:if="{{footTextShow}}">
+    <text>到底了，别拉了~</text>
+  </view>
+  <!-- 遮罩层 -->
+  <view class='dx-motal' capture-catch:touchmove wx:if="{{showModalStatus}}" bindtap='hideModal'>
+    <view class='motal-container' catchtap='showModal'>
+      <view class='topImg'>
+        <image src='../../assets/images/ruleBgTop2.png' mode='widthFix'></image>
+      </view>
+      <view class='text'>
+        <view>1、给爱豆照片点赞、疯狂点赞（舔屏）</view>
+        <view>2、分享到微信群、微信好友</view>
+        <view>3、上传高清、无水印爱豆照片</view>
+        <text> \n </text>
+        <view>[每周一凌晨重置人气]</view>
+      </view>
+      <view class='btn' catchtap='hideModal'>
+        <text>知道了</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提示窗 -->
+  <view class='guide-collect guide-collect-animationList' wx:if="{{cueShow}}">
+    <image src="../../assets/images/addCue.png"></image>
+  </view>
+  <!-- 提示窗end -->
+
+  <!-- loading -->
+  <Loading wx:if="{{showLoading}}"></Loading>
+  <!-- loading end -->
+</view>
+

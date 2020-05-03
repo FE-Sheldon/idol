@@ -1,0 +1,8 @@
+<view class="guide_box">
+  <image mode="widthFix" src="{{openPhotoSrc}}"></image>
+  <view class='count-down' bindtap='jump' wx:if="{{countDownShow}}">
+    <canvas canvas-id="myCanvas"></canvas>
+  </view>
+</view>
+<import src="../../img-loader/img-loader.wxml" />
+<template is="img-loader" data="{{ imgLoadList }}"></template>

@@ -1,0 +1,281 @@
+/**index.wxss**/
+
+page,.emoji{
+  width: 100%;
+  height: 100%;
+  background-image: url(https://idols.heywoodsminiprogram.com/images/emojiBg.png);
+  background-size: cover;
+  background-repeat:no-repeat;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+.clear:after{content: '';clear: both;display: block;overflow: hidden;}
+.fl{float: left;}
+.fr{float: right;}
+image{
+  display:block;
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.redTxt{
+  color: #f66d6c;
+}
+.emoji-page-header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 127rpx;
+  z-index: 9999;
+}
+.emojiInfo{
+  width: 696rpx;
+  height: 208rpx;
+  background-image: url(https://idols.heywoodsminiprogram.com/images/emojiInfoBg.png);
+  background-size: cover;
+  background-repeat:no-repeat;
+  position:fixed;
+  top:130rpx;
+  left:32rpx;
+  z-index: 100;
+  padding-top: 14rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.emojiInfoCon{
+  width: 650rpx;
+  margin: 0 20rpx;
+}
+.starImg{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.emojiInfoCon_r{
+  width: 530rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #3b3c68;
+  line-height: 50rpx;
+}
+.emojiInfoCon_t{
+  height: 50rpx;
+}
+.starName{
+  font-size: 42rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+.expressionThumbs{
+  margin-left: 5rpx;
+  font-weight: bold;
+}
+.nextThumbsCount{
+  margin: 0 5rpx;
+  font-weight: bold;
+}
+.progressBar{
+  margin: 6rpx 0;
+  /* position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-90px;
+  margin-top:-10px;
+  width:180px;
+  height:20px;
+  border:1px solid darkgray; */
+}
+/* #progressBarFill{
+    animation: move 2s;
+    text-align: center;
+    background-color: #6caf00;
+}
+@keyframes move {
+    0%{
+        width:0;
+
+    }
+    100%{
+        width:100%;
+    }
+} */
+.noticeCon{
+  background-color: #3b3c68;
+  display: inline-block;
+  margin: 10rpx auto 0 -5rpx;
+  border-radius: 5rpx;
+  padding: 0 8rpx;
+  overflow: hidden;
+}
+.noticeIcon{
+  width: 26rpx;
+  height: 26rpx;
+  margin: 6rpx 6rpx 0 0;
+}
+.noticeTxt{
+  font-size: 28rpx;
+  color: #ffffff;
+  line-height: 40rpx;
+}
+
+
+.emojiCon{
+  width: 100%;
+  height: calc(100% - 530rpx);
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 360rpx;
+}
+.emojiConK{
+  width: 100%;
+  height: calc(100% - 20px);
+  margin-top: 10px;
+}
+.emojiConK_center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  margin: 0 auto;
+  text-align: center;
+}
+.emojiPart{
+  width: 100%;
+  height: 233rpx;
+}
+.emojiPartCenter{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+.emojiPartFinal{
+  width: 700rpx;
+  height: 520rpx;
+}
+.finalEmojiBg{
+  width: 700rpx;
+  height: 700rpx;
+  position: absolute;
+  top: -180rpx;
+  animation: rotating 3s linear infinite;
+}
+@keyframes rotating {
+    from { transform: rotate(0) }
+    to { transform: rotate(360deg) }
+}
+.finalEmojiIcon{
+  width: 522rpx;
+  height: 352rpx;
+  position: absolute;
+  top: 60rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.emojiStarIcon{
+  position: absolute;
+  width: 517rpx;
+  height: 398rpx;
+  top: -34rpx;
+  left: 83rpx;
+  
+}
+.finalImg{
+  width: 220rpx;
+  height: 220rpx;
+  overflow:hidden;
+  border-radius:50%;
+  position: absolute;
+  top: 81.5rpx;
+  left: 234rpx;
+}
+.monsterCon{
+  width: 431rpx;
+  height: 229rpx;
+}
+.angelCon{
+  width: 375rpx;
+  height: 233rpx;
+}
+.monsterIcon,.angelIcon{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.monsterImg{
+  width: 156rpx;
+  height: 156rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  top: 13rpx;
+  /* margin-left: -1rpx; */
+}
+.angelImg{
+  width: 156rpx;
+  height: 156rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  top: 17rpx;
+  margin-left: -4rpx;
+}
+.emojiNumber{
+  width: 82rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  bottom: 14rpx;
+  left: 50%;
+  transform: translateX(-52%);
+}
+.emojiNewIcon{
+  width: 80rpx;
+  height: 53rpx;
+  position: absolute;
+  top: 0;
+  left:57%;
+}
+.emojiShelvesIcon{
+  width: 108rpx;
+  height: 72rpx;
+  position: absolute;
+  top: -19rpx;
+  left:54%;
+}
+
+
+.bottomBtnForm{
+  width: 634rpx;
+  height: 113rpx;
+  position:fixed;
+  bottom:36rpx;
+  left:68rpx;
+  z-index: 100;
+}
+.bottomBtn{
+  position:absolute;
+  top:0rpx;
+  left:0rpx;
+  width:100%;
+  height:100%;
+  z-index:100;
+  /* opacity:0; */
+}
+.bottomBtnImg{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/guide/guide",
+    "pages/home/home",
+    "pages/personal/personal",
+    "pages/search/search",
+    "pages/starIndex/starIndex",
+    "pages/uploadPhoto/uploadPhoto",
+    "pages/photoDetail/photoDetail",
+    "pages/uploadResult/uploadResult",
+    "pages/groupPhoto/groupPhoto",
+    "pages/emoji/emoji",
+    "pages/video/video"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#e65a73",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "HOME",
+        "iconPath": "assets/images/homeFootIcon.png",
+        "selectedIconPath": "assets/images/homeFootIconActive.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "ME",
+        "iconPath": "assets/images/personalFootIcon.png",
+        "selectedIconPath": "assets/images/personalFootIconActive.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,154 @@
+<!--pages/personal/personal.wxml-->
+<view class='personal-page' id="personal-page">
+  <view style="display:none">
+    <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic_artwork}}" bindload="onImageLoad"></image>
+  </view>
+  <view class='header'>
+    <view class='header-up'>
+      <!-- <view class='navigationBarTitleText'>我</view>
+      <view class='user-info'>
+        <view class='avatar-img-box'>
+          <image src='../../assets/images/noLoginHeadPortrait.png' wx:if="{{!isLogin}}"></image>
+          <image src='{{userInfoAvataSrc}}' wx:if="{{!!isLogin}}"></image>
+        </view>
+        <view class='nick-name' wx:if="{{!!isLogin}}">{{userInfoNickName}}</view>
+        <form bindsubmit="formIdCollect" report-submit="true" wx:if="{{!isLogin}}">
+          <button form-type="submit" hover-class="none" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            <view class='wxLoginBtn'>
+              <image src='../../assets/images/wxLoginBtn.png'></image>
+            </view>
+          </button>
+        </form>
+      </view> -->
+      <view class='user-info'>
+        <open-data type="userAvatarUrl" class="avatar-img-box"></open-data>
+        <open-data type="userNickName" class="nick-name"></open-data>
+      </view>
+    </view>
+    <view class='tab-nav'>
+      <view class='tab-nav-container'>
+        <!-- 我家爱豆 -->
+        <view class="wjad item {{currentTab==0 ? 'active' : ''}}" bindtap='tabNavClick' data-current="0">
+          <form bindsubmit="formIdCollect" report-submit="true">
+            <button form-type="submit" hover-class="none">
+              <view class='span'>
+                <text wx:if="{{myFavoritePhotoNum == 0}}">我家爱豆（0）</text>
+                <text wx:else>我家爱豆（{{myFavoritePhotoNum}}）</text>
+              </view>
+            </button>
+          </form>
+        </view>
+        <!-- 我家爱豆end -->
+
+        <!-- 上传的照片 -->
+        <view class="upload-photos item {{currentTab==1 ? 'active' : ''}}" bindtap='tabNavClick' data-current="1">
+          <form bindsubmit="formIdCollect" report-submit="true">
+            <button form-type="submit" hover-class="none">
+              <view class='span'>
+                <text wx:if="{{uploadPhotoPhotoNum == 0}}">上传的照片（0)</text>
+                <text wx:else>上传的照片（{{uploadPhotoPhotoNum}}）</text>
+              </view>
+            </button>
+          </form>
+        </view>
+        <!-- 上传的照片end -->
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 我家爱豆照片数据内容 -->
+  <scroll-view wx:if="{{currentTab == 0 }}">
+    <view class="wjad-photo-list">
+      <view class='box' wx:for="{{myFavoriteList.lists}}" bindtap='goStarIndexPage' wx:key="{{itm.star_id}}" data-starid="{{item.star_id}}" data-starname="{{item.star_name}}">
+        <view class='img-box'>
+          <image src='{{item.pic_small}}' lazy-load='true' mode='widthFix'></image>
+        </view>
+        <view class='text'>
+          <view class='name'>{{item.star_name}}</view>
+          <view class='photo-number'>{{item.total_pic}}张照片</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 我家爱豆照片数据内容end -->
+  <view class='upload-photo-list' style="width: 100%" wx:if="{{currentTab == 1 && uploadPhotoList.banner.banner_star.length>0}}">
+    <scroll-view scroll-x class="star-name-list" scroll-left="{{scrollLeft}}" scroll-with-animation scroll-into-view="{{toView}}">
+      <view wx:for="{{uploadPhotoList.banner.banner_star}}" wx:key="{{item.star_id}}" class="item  {{starNameIndex === index ? 'active' : ''}}" data-index='{{index}}' bindtap='starNameClick' data-starid="{{item.star_id}}" id="a{{item.star_id}}" wx:if="{{item.star_name != ''}}">
+        <text>{{item.star_name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 上传的照片数据内容 -->
+  <scroll-view wx:if="{{currentTab == 1 && uploadPhotoList.lists.length>0}}" style="height:100%;">
+
+    <view class='uploadPhoto-container' wx:if="{{currentTab == 1 && uploadPhotoList.lists.length>0}}">
+      <view class='left-view'>
+        <view class='box' wx:for="{{leftList}}" bindtap='goPhotoDetailPage' wx:key="{{item.star_id}}" data-starid='{{item.star_id}}' data-status="{{item.status}}" data-picid="{{item.id}}" data-starname="{{item.star_name}}">
+          <view class='item'>
+            <view class='img-box' style='height:{{item.height * 360 / item.width}}rpx;'>
+              <image src='{{item.pic_artwork}}' mode='widthFix' lazy-load='true'></image>
+            </view>
+            <view class='text'>
+              <text wx:if="{{item.status == -1 || item.status == 0}}">审核中</text>
+              <view class='heart-img-box' wx:if="{{item.status == 1}}">
+                <image src='../../assets/images/likeIcon.png' wx:if="{{item.is_thumbs==0}}"></image>
+                <image src='../../assets/images/likeIconActive.png' wx:if="{{item.is_thumbs==1}}"></image>
+                <view class='like-number'>{{item.thumbs}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='right-view'>
+        <view class='box' wx:for="{{rightList}}" bindtap='goPhotoDetailPage' wx:key="{{item.star_id}}" data-starid='{{item.star_id}}' data-status="{{item.status}}" data-picid="{{item.id}}" data-starname="{{item.star_name}}">
+          <view class='item'>
+            <view class='img-box' style='height:{{item.height * 360 / item.width}}rpx;'>
+              <image src='{{item.pic_artwork}}' mode='widthFix' lazy-load='true'></image>
+            </view>
+            <view class='text'>
+              <text wx:if="{{item.status == -1 || item.status == 0}}">审核中</text>
+              <view class='heart-img-box' wx:if="{{item.status == 1}}">
+                <image src='../../assets/images/likeIcon.png' wx:if="{{item.is_thumbs==0}}"></image>
+                <image src='../../assets/images/likeIconActive.png' wx:if="{{item.is_thumbs==1}}"></image>
+                <view class='like-number'>{{item.thumbs}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+  <!-- 上传的照片数据内容end -->
+
+  <!-- 遮罩层 -->
+  <view class='dx-motal' capture-catch:touchmove wx:if="{{showModalStatus}}" bindtap='hideModal'>
+    <view class='motal-container' catchtap='showModal'>
+      <view class='star-name'>
+        <text>{{starName}}</text>
+      </view>
+      <view class='text-content'>太棒了～谢谢你为我上传照片，还带来了{{popular}}人气～给你笔芯哦～</view>
+      <view class='btn' catchtap='hideModal'>
+        <text>收下谢意</text>
+      </view>
+    </view>
+  </view>
+  <!-- 遮罩层end -->
+  <!-- 我家爱豆无数据内容 -->
+  <view class='no-wjad-list' wx:if="{{currentTab == 0 && myFavoriteListNoData}}">
+    <image src='../../assets/images/noWjadPhoto.png' mode='widthFix'></image>
+  </view>
+  <!-- 我家爱豆无数据内容end -->
+
+  <!-- 上传的照片无数据内容 -->
+  <view class='no-upload-photo-list' wx:if="{{currentTab == 1 && uploadPhotoListNoData}}">
+    <image src='../../assets/images/noUploadPhoto.png' mode='widthFix'></image>
+  </view>
+  <!-- 上传的照片无数据内容end -->
+
+  <!-- loading -->
+  <Loading wx:if="{{showLoading}}"></Loading>
+  <!-- loading end -->
+</view>

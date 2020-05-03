@@ -1,0 +1,63 @@
+<!--pages/search/search.wxml-->
+<view class='search-page'>
+  <view class='search-page-header' style="padding-top:{{statusBarHeight}}rpx" id="HeaderNav">
+    <HeaderNav titleNameProp="搜索" isIphoneXProp="{{isIphoneX}}"></HeaderNav>
+  </view>
+
+  <view class='input-view'>
+    <input placeholder="请输入爱豆名字" bindconfirm="inputBlur" value="{{starName}}" maxlength="20" focus="true" />
+    <view class='clearInputBtn' catchtap='clearInput'>
+      <image src='../../assets/images/clearInputIcon.png'></image>
+    </view>
+  </view>
+
+  <view class='star-name-lists' wx:if="{{searchHotListShow}}">
+    <view class='box' wx:for="{{searchHotList}}" wx:key="{{item.id}}" data-starid='{{item.id}}' bindtap='goStarIndexPage' data-starname="{{item.name}}">
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+
+  <view class='no-result' wx:if="{{searchList.length ==0}}">
+    <image src='../../assets/images/noResultImg.png' mode='widthFix' class='noResultImg'></image>
+  </view>
+  <!-- 联系客服按钮 -->
+  <form bindsubmit="customServiceForm" report-submit="true" wx:if="{{searchList.length ==0}}">
+    <button open-type="contact" form-type="submit">
+      <view class='no-result'>
+        <image src='../../assets/images/contactCustomerBtn.png' mode='widthFix' class='contactCustomerBtn'></image>
+      </view>
+    </button>
+  </form>
+  <!-- 联系客服按钮end -->
+
+  <view class='nhuman-qi-weekly-list'>
+    <view class='container'>
+      <view class='box' wx:for="{{searchList.lists}}" bindtap='goStarIndexPage' wx:key="{{item.id}}" data-starid='{{item.id}}' data-starname="{{item.name}}">
+        <view class='userinfo-view'>
+          <view class='content'>
+            <view class='rank'>{{item.popularity_num}}</view>
+            <view class='name'>
+              <text>{{item.name}}</text>
+            </view>
+            <!-- <view class='userinfo'>
+              <view class='rank'>{{item.popularity_num}}</view>
+              <view class='name'>{{item.name}}</view>
+            </view>
+            <view class='pull-nhuman-qi-button'>
+              <text>为TA打榜</text>
+            </view> -->
+          </view>
+        </view>
+        <view class='img-container'>
+          <view class='img-box' wx:for="{{item.picList}}" wx:for-item="imgs" wx:key="{{item}}">
+            <image src='{{imgs.pic_small}}'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- loading -->
+  <Loading wx:if="{{showLoading}}"></Loading>
+  <!-- loading end -->
+</view>

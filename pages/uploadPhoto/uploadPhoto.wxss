@@ -1,0 +1,64 @@
+/* pages/uploadPhoto/uploadPhoto.wxss */
+.uploadPhoto-page .uploadPhoto-page-header {
+  width: 100%;
+  height: 127rpx;
+  background: #3b3c42;
+  z-index: 9999;
+}
+
+.uploadPhoto-page .photo-container {
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.uploadPhoto-page .photo-container .box {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  padding: 20rpx;
+}
+.uploadPhoto-page .photo-container .box .add-img-box{
+  width: 200rpx;
+}
+.uploadPhoto-page .photo-container .box .img-box {
+  width: 200rpx;
+  height: 200rpx;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uploadPhoto-page .photo-container .box .delete-img-box {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 6rpx;
+  right: 9rpx;
+}
+
+.uploadPhoto-page .confirm-btn {
+  width: 640rpx;
+  height: 100rpx;
+  background: rgba(56, 191, 123, 1);
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; */
+  /* bottom:-32rpx; */
+  /* left: 50%; */
+  /* transform: translate(-50%,-50%) */
+  margin: 0 auto;
+  margin-top: 118rpx;
+}
+.uploadPhoto-page .confirm-btn-gray{
+    background: #ccc;
+}
+.uploadPhoto-page .confirm-btn text {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(249, 249, 249, 1);
+}

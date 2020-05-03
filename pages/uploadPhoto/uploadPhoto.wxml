@@ -1,0 +1,37 @@
+<!--pages/uploadPhoto/uploadPhoto.wxml-->
+<view class='uploadPhoto-page'>
+
+  <view class='uploadPhoto-page-header' style="padding-top:{{statusBarHeight}}rpx" id="HeaderNav">
+    <HeaderNav titleNameProp="上传爱豆照片"></HeaderNav>
+  </view>
+  <view style="display:none">
+    <image wx:for="{{imagesList}}" wx:key="id" id="{{item.id}}" src="{{item.src}}" bindload="onImageLoad"></image>
+  </view>
+  <view class='photo-container'>
+    <view class='box' wx:for="{{imagesLists}}" wx:key="{{item.src}}" wx:if="{{index < 9}}">
+      <view class="img-box" bindtap="clickPhoto" data-srcArr='{{imagesLists}}' data-index='{{index}}'>
+        <image src="{{item.src}}" mode='widthFix'></image>
+      </view>
+      <view class='delete-img-box' bindtap='deletePhoto' data-imgSrc="{{item.src}}">
+        <image src='../../assets/images/deleteIcon.png' mode='widthFix'></image>
+      </view>
+    </view>
+
+    <view class='box' wx:if="{{imagesLists.length < 9}}">
+      <view class="add-img-box">
+        <form bindsubmit="" report-submit="true">
+          <button form-type="submit" hover-class="none" open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+            <image src="../../assets/images/addPhotoIcon.png" mode='widthFix'></image>
+          </button>
+        </form>
+      </view>
+    </view>
+  </view>
+  <view class="confirm-btn {{imagesLists.length == 0 ?'confirm-btn-gray' : '' }}" bindtap='sumbit'>
+    <text>{{sumbitText}}</text>
+  </view>
+</view>
+
+<!-- loading -->
+<Loading wx:if="{{showLoading}}" titleProp="正在上传..."></Loading>
+<!-- loading end -->

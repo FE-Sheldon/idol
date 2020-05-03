@@ -1,0 +1,735 @@
+/* pages/photoDetail/photoDetail.wxss */
+
+.photoDetail-page {
+  width: 100%;
+  position: relative;
+  /* overflow: hidden; */
+  height: 100vh;
+  background: #000;
+}
+
+.scroll-lock {
+  overflow-y: hidden;
+}
+
+.photoDetail-page .photoDetail-page-header {
+  width: 100%;
+  height: 127rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* background: red; */
+  z-index: 9999;
+}
+
+.photoDetail-page .photo-swiper-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoDetail-page .photo-swiper-container swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.photoDetail-page .photo-swiper-container .loading-box {
+  z-index: 999;
+  text-align: center;
+}
+
+.photoDetail-page .photo-swiper-container .loading-box .loading {
+  width: 70rpx;
+  height: 64rpx;
+}
+
+.photoDetail-page .photo-swiper-container .loading-box .loading-text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.photoDetail-page .photo-swiper-container swiper swiper-item {
+  display: flex;
+  justify-content: center;
+}
+
+.photoDetail-page .photo-swiper-container swiper .shortPhotoStyle {
+  display: flex;
+  align-items: center;
+}
+
+.photoDetail-page .photo-swiper-container swiper .longPhotoStyle {
+  display: flex;
+  overflow-y: scroll;
+  /* align-content: space-around; */
+}
+
+.photoDetail-page .heartIcon-img-box {
+  width: 185rpx;
+  position: absolute;
+  z-index: 999;
+}
+
+.photoDetail-page .popular-animation {
+  position: absolute;
+  z-index: 999;
+  animation: popular-animation 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.3s;
+}
+
+@keyframes popular-animation {
+  form {
+    transform: scale3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale3d(1.2, 1.2, 1.2);
+    opacity: 0;
+  }
+}
+
+.photoDetail-page .popular-view text {
+  font-size: 64rpx;
+  font-family: PingFangSC;
+  color: #ff4d7c;
+  text-shadow: 3rpx 3rpx 0px #fff, -3rpx -3rpx 0px #fff;
+}
+
+.photoDetail-page .heart-animation {
+  animation: heart-animation 1s ease 0.3s;
+  animation-fill-mode: forwards; 
+  -webkit-animation: heart-animation 1s ease 0.3s;
+  /* -ms-animation: heart-animation 1s ease 0.3s;
+  -o-animation: heart-animation 1s ease 0.3s;
+  -moz-animation: heart-animation 1s ease 0.3s;
+  -khtml-animation: heart-animation 1s ease 0.3s; */
+  /* animation: heart-animation 1s; */
+  /* animation-timing-function: ease;
+  animation-delay: 0.3s; */
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes heart-animation {
+  form {
+    transform: scale3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale3d(3, 3, 3);
+    opacity: 0;
+  }
+}
+@keyframes heart-animation {
+  form {
+    transform: scale3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale3d(3, 3, 3);
+    opacity: 0;
+  }
+}
+
+.photoDetail-page .top-shade-img-box {
+  width: 100%;
+  z-index: 999;
+  height: 128rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.photoDetail-page .arrow-left-img-box {
+  z-index: 999;
+  width: 23rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 26rpx;
+  top: 58rpx;
+}
+
+.photoDetail-page .nick-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 24px;
+  position: absolute;
+  bottom: 46rpx;
+  right: 25rpx;
+  padding: 13rpx 5rpx 12rpx 14rpx;
+  box-sizing: border-box;
+}
+
+.photoDetail-page .nick-name text {
+  z-index: 999;
+  font-size: 26rpx;
+  font-weight: 400;
+  font-family: PingFangSC;
+  color: rgba(221, 221, 221, 1);
+  padding-right: 10rpx;
+}
+
+.photoDetail-page .popular-container {
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #000;
+  opacity: 0.5; *//* border-top-left-radius: 27rpx;
+  border-bottom-left-radius: 27rpx; *//* height: 54rpx; */
+  position: absolute;
+  top: 228rpx;
+  right: 55rpx;
+  /* padding: 10rpx;
+  box-sizing: border-box; */
+}
+
+/* .photoDetail-page .popular-container .img-box {
+  z-index: 1000;
+  width: 28rpx;
+} */
+
+.photoDetail-page .popular-container .popular-number {
+  z-index: 1000;
+  font-size: 34rpx;
+  font-family: PingFangSC;
+  color: rgba(255, 255, 255, 1);
+}
+.photoDetail-page .handle-btn {
+  position: absolute;
+  bottom: 122rpx;
+  right: 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 125rpx;
+  height: 678rpx;
+}
+/* .photoDetail-page  .like {
+  position: absolute; */
+  /* bottom: 526rpx; */
+  /* bottom: 680rpx;
+  right: 0;
+  text-align: center;
+} */
+
+/* .photoDetail-page  .download {
+  position: absolute; */
+  /* bottom: 379rpx; */
+  /* bottom: 545rpx;
+  right: 0;
+  text-align: center;
+} */
+
+.photoDetail-page .like .img-box {
+  width: 125rpx;
+  height: 120rpx;
+  /* background: red; */
+}
+
+.photoDetail-page .like .img-box image {
+  z-index: 999;
+  width: 100rpx;
+}
+
+.photoDetail-page .download .img-box {
+  width: 125rpx;
+  height: 120rpx;
+  /* background: yellow; */
+}
+
+.photoDetail-page .download .img-box image {
+  z-index: 999;
+  width: 100rpx;
+}
+
+/* .photoDetail-page .group-photo {
+  position: absolute; */
+  /* bottom: 737rpx; */
+  /* bottom: 387rpx;
+  right: 0;
+  text-align: center;
+} */
+
+.photoDetail-page .group-photo .img-box {
+  width: 125rpx;
+  height: 120rpx;
+}
+
+.photoDetail-page .group-photo .img-box image {
+  width: 75rpx;
+  z-index: 999;
+}
+
+.photoDetail-page .group-photo .group-photo-text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* .photoDetail-page .share {
+  position: absolute; */
+  /* bottom: 237rpx; */
+  /* bottom: 255rpx;
+  right: 0;
+  text-align: center;
+} */
+
+.photoDetail-page .share .img-box {
+  width: 125rpx;
+  height: 120rpx;
+  /* background: yellow; */
+}
+
+.photoDetail-page .share .img-box image {
+  width: 100rpx;
+  z-index: 999;
+}
+
+/* .photoDetail-page .music-icon4 {
+  position: absolute;
+  bottom: 122rpx; */
+  /* bottom: 127rpx; */
+  /* right: 0;
+  text-align: center;
+} */
+
+.photoDetail-page .music-icon4 .img-box {
+  width: 125rpx;
+  text-align: center;
+}
+
+.photoDetail-page .music-icon4 .img-box image {
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.photoDetail-page .music-icon3 {
+  position: absolute;
+  bottom: 203rpx;
+  right: 0;
+}
+
+.photoDetail-page .music-icon3 .img-box {
+  width: 34rpx;
+  height: 54rpx;
+}
+
+.like-animation {
+  animation: like-animation 1s;
+  animation-iteration-count: 1;
+  /* animation-timing-function: ease *//* animation-fill-mode: forwards; *//* animation-timing-function: ease; *//* animation-delay: 0.3s; */
+}
+
+.share-animation {
+  animation: share-animation 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+.loading-animation {
+  animation: loading-animation 2s;
+  /* animation-timing-function: ease; */
+  animation-iteration-count: infinite;
+  /* animation-direction:alternate; */
+}
+
+@keyframes like-animation {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  25% {
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: scale3d(1, 1, 1); /*开始为原始大小*/
+  }
+
+  25% {
+    transform: scale3d(1.5, 1.5, 1.5); /*放大1.5倍*/
+  }
+
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  75% {
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+}
+
+@keyframes share-animation {
+  0% {
+    transform: scale(1, 1, 1); /*开始为原始大小*/
+  }
+
+  25% {
+    transform: scale(1.5, 1.5, 1.5); /*放大1.5倍*/
+  }
+
+  50% {
+    transform: scale(1, 1, 1);
+  }
+
+  75% {
+    transform: scale(1.5, 1.5, 1.5);
+  }
+}
+
+.photoDetail-page  .like .like-number,
+.photoDetail-page .download .download-number {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 255, 255, 1);
+  margin-top: -20rpx;
+}
+
+/* 点击goback的空标签区域样式 */
+
+.return-page-view {
+  z-index: 1000;
+  width: 150rpx;
+  height: 132rpx;
+  position: fixed;
+  /* background:#000; */
+  top: 0;
+  left: 10rpx;
+}
+
+.guide-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 324rpx;
+  height: 245rpx; */
+  width: 393rpx;
+  height: 333rpx;
+}
+
+.guideHandBg {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.guideHandBg image, .guide-hand image {
+  width: 100%;
+  height: 100%;
+}
+
+.guide-swiper-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  width: 240rpx;
+  height: 165rpx;
+}
+
+/* 点击goback的空标签区域样式end */
+
+/* 播放列表样式 */
+
+.music-play-list {
+  width: 100%;
+  height: 620rpx;
+  position: fixed;
+  left: 0;
+  bottom: -620rpx;
+  /* transform: translateY(0rpx); */
+  z-index: 9999;
+  /* opacity: 0; */
+}
+
+.music-play-list .head {
+  width: 100%;
+  height: 72rpx;
+  background: rgba(55, 55, 58, 1);
+  border-radius: 18rpx 18rpx 0px 0px;
+  position: relative;
+}
+
+.music-play-list .main {
+  position: relative;
+}
+
+.music-play-list .head .title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.music-play-list .close {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translate(0, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-play-list .close image {
+  width: 29rpx;
+  height: 29rpx;
+}
+
+.music-play-list scroll-view {
+  z-index: 9999;
+  background: #323337;
+}
+
+.music-play-list .main {
+  width: 100%;
+  /* height: 548rpx; */
+  height: 100%;
+  background: #323337;
+}
+
+.music-play-list .main .contain {
+  height: 100%;
+}
+
+.music-play-list .main .contain .box {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30rpx;
+  height: 90rpx;
+  border-bottom: 2rpx solid #39393c;
+}
+
+.music-play-list .main .contain .box .music-name {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(204, 205, 206, 1);
+  z-index: 9999;
+}
+
+.music-play-list .main .contain .box-active .music-name {
+  color: #38bf7b;
+}
+
+.music-play-list .main .contain .box .handlebtn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-play-list .main .contain .box .handlebtn .play {
+  width: 26rpx;
+  height: 30rpx;
+}
+
+.music-play-list .main .contain .box .handlebtn .pause {
+  width: 16rpx;
+  height: 26rpx;
+}
+
+.show-music-playlist-am {
+  animation: show-music-playlist-am 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  /* animation-delay: 0.3s; */
+}
+
+.photoDetail-page .disc-am {
+  animation: disc-am 3s linear infinite;
+}
+
+@keyframes disc-am {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes show-music-playlist-am {
+  form {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-685rpx);
+  }
+}
+
+.hide-music-playlist-am {
+  animation: hide-music-playlist-am 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes hide-music-playlist-am {
+  0% {
+    transform: translateY(-685rpx);
+  }
+
+  100% {
+    transform: translateY(0rpx);
+  }
+}
+
+/* 播放列表样式 */
+
+/* 无音乐的样式 */
+
+.music-play-list .no-muisc-list {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #323337;
+  box-sizing: border-box;
+}
+
+.music-play-list .no-muisc-list .img-box {
+  width: 132rpx;
+  height: 132rpx;
+  margin: 0 auto;
+  padding-top: 119rpx;
+  margin-bottom: 70rpx;
+}
+
+.music-play-list .no-muisc-list text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(132, 133, 138, 1);
+}
+
+.music-play-list .no-muisc-list .text-2 .left text {
+  color: #fff;
+  margin-right: 10rpx;
+}
+
+.music-play-list .main .contain .music-list-footer {
+  text-align: center;
+  position: absolute;
+  bottom: 29rpx;
+  left: 130rpx;
+}
+
+.music-play-list .main .contain .music-list-footer2 {
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.music-play-list .main .contain .music-list-footer text,
+.music-play-list .main .contain .music-list-footer2 text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(132, 133, 138, 1);
+}
+
+.music-play-list .main .contain .music-list-footer .text-2 text,
+.music-play-list .main .contain .music-list-footer2 .text-2 text {
+  color: #fff;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+/* 无音乐的样式 */
+
+/* 分享加人气样式 */
+
+.photoDetail-page .share-add-popular {
+  /* width: 100%; *//* height: 100%; */
+  position: absolute;
+  left: 34%;
+  top: 50%;
+  transform: translate(-34%, -50%);
+  z-index: 9999;
+}
+
+.photoDetail-page .share-add-popular .img-box {
+  display: flex;
+}
+
+.photoDetail-page .share-add-popular .img-box .number0,
+.photoDetail-page .share-add-popular .img-box .number4 {
+  width: 23rpx;
+  height: 37rpx;
+}
+
+.photoDetail-page .share-add-popular .img-box .number1 {
+  width: 13rpx;
+  height: 37rpx;
+}
+
+.photoDetail-page .share-add-popular .img-box .number2,
+.photoDetail-page .share-add-popular .img-box .number3,
+.photoDetail-page .share-add-popular .img-box .number5,
+.photoDetail-page .share-add-popular .img-box .number6,
+.photoDetail-page .share-add-popular .img-box .number7,
+.photoDetail-page .share-add-popular .img-box .number8 {
+  width: 21rpx;
+  height: 37rpx;
+}
+
+.photoDetail-page .share-add-popular .img-box .number9 {
+  width: 22rpx;
+  height: 37rpx;
+}
+
+.photoDetail-page .share-add-popular .img-box .img1 {
+  width: 248rpx;
+  height: 37rpx;
+}
+
+.photoDetail-page .share-popular-animation {
+  position: absolute;
+  z-index: 999;
+  animation: share-popular-animation 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.3s;
+}
+
+@keyframes share-popular-animation {
+  form {
+    transform: scale3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale3d(1.2, 1.2, 1.2);
+    opacity: 0;
+  }
+}
+
+/* 分享加人气样式end */

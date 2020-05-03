@@ -1,0 +1,20 @@
+<!--components/headerNav/HeaderNav.wxml-->
+<view class='header-nav'>
+
+  <view class='container'>
+    <view class="return-page-view {{arrowLeftIsFixedProp == true ? 'return-page-view-fixed': ''}} {{isIphoneXProp == true? 'isIponeX-return-page-view':''}}" bindtap='goPage' data-targetPageProp='{{targetPageProp}}' wx:if="{{arrowLeftShowProp && !homeIconShowProp}}">
+      <image src="../../assets/images/fanhui.png" mode='widthFix'></image>
+    </view>
+    <view class="go-index-page-view  {{arrowLeftIsFixedProp == true ? 'go-index-page-view-fixed': ''}} {{isIphoneXProp == true? 'isIponeX-return-index-page-view':''}}" wx:if="{{homeIconShowProp}}" bindtap='goIndexPage'>
+       <image src="../../assets/images/goIndexPageIcon.png" mode='widthFix'></image>
+    </view>
+    <!-- <form bindsubmit="formIdCollect" report-submit="true" wx:if="{{arrowLeftShowProp}}">
+      <button form-type="submit">
+        <view class="{{isIphoneXProp == true? 'isIponeXTop':'jiantou-img-box'}} {{arrowLeftIsFixedProp == true ? 'arrow-left-fixed': ''}}">
+          <image src="https://idols.heywoodsminiprogram.com/images/arrowLeft.png" mode="widthFix"></image>
+        </view>
+      </button>
+    </form> -->
+    <view class="nav-title {{isIphoneXProp == true? 'nav-title-isIponeXTop':''}}" style="color:{{navTitleColorProp}}" wx:if="titleNameProp != ''">{{titleNameProp}}</view>
+  </view>
+</view>

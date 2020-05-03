@@ -1,0 +1,73 @@
+/* pages/video/video.wxss */
+
+.video-page {
+  background: url("https://idols.heywoodsminiprogram.com/images/videoBg.png") no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100vh;
+}
+
+.video-page .video-page-header {
+  width: 100%;
+  height: 127rpx;
+  z-index: 9999;
+}
+
+.video-page .video-view {
+  background: url("https://idols.heywoodsminiprogram.com/images/videoJuxinBg2.png") no-repeat;
+  background-size: 100%;
+  width: 700rpx;
+  height: 503rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  position: relative;
+}
+.video-page .video-view .video-title{
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  top:0;
+  left:0;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.video-page .video-view .video {
+  width: 670rpx;
+  height: 415rpx;
+  left: 50%;
+  margin-left: -335rpx;
+  text-align: center;
+  margin-top: 83rpx;
+}
+.video-page .vocal-cords{
+  margin: 0 auto;
+  width: 550rpx;
+  margin-top: 60rpx;
+}
+.video-page .haneld-btn{
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 28rpx;
+}
+.video-page .haneld-btn .item{
+  width:313rpx;
+  margin:0 15rpx;
+}
+
+.ad-view{
+  width:100%;
+  overflow:hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

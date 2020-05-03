@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "HeaderNav": "/components/headerNav/HeaderNav",
+    "Loading": "/components/loading/Loading"
+  }
+}
